@@ -14,59 +14,109 @@ export default function HomePage() {
       {/* ================= ONLINE LEARNING CENTER SECTION ================= */}
       <AboutSection />
 
-      {/* ================= ABOUT INSTITUTE ================= */}
-      <section className="py-20 max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-[#0b1e6d] mb-8">
-          About The Institute
-        </h2>
+ {/* ================= PREMIUM ABOUT INSTITUTE ================= */}
+<section className="py-32 bg-gradient-to-b from-[#f9fafc] to-white overflow-hidden">
+  <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
 
-        <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-          Paul Sir’s Classes is one of the most trusted commerce coaching institutes in North Kolkata.
-          Located near Girish Park Metro and Dumdum Station, the institute has been guiding students
-          for over 25 years with structured teaching, exam-focused preparation, and personalized attention.
+    {/* ===== LEFT IMAGE AREA ===== */}
+    <div className="relative">
+
+      {/* Background Accent Layer */}
+      <div className="absolute -top-10 -left-10 w-[90%] h-[90%] bg-orange-100 rounded-[40px]"></div>
+      <div className="absolute -bottom-10 -right-10 w-[90%] h-[90%] border-4 border-orange-200 rounded-[40px]"></div>
+
+      {/* Main Image */}
+      <img
+        src="/paul.jpeg"
+        alt="J Paul Sir"
+        className="relative z-10 rounded-[40px] shadow-2xl w-full object-cover"
+      />
+
+      {/* Floating Achievement Card */}
+      <div className="absolute -bottom-10 left-10 bg-white px-8 py-6 rounded-3xl shadow-xl z-20">
+        <p className="text-sm text-gray-500">Guiding Students Since</p>
+        <p className="text-sm text-gray-600 mt-1">25+ Years of Excellence</p>
+      </div>
+
+    </div>
+
+    {/* ===== RIGHT CONTENT ===== */}
+    <div>
+
+      <p className="text-orange-500 font-semibold tracking-wide uppercase mb-5">
+        About The Institute
+      </p>
+
+      <h2 className="text-4xl lg:text-5xl font-bold text-[#0f172a] leading-tight mb-8">
+        Empowering Commerce Students
+        <br />
+        With Expertise & Integrity
+      </h2>
+
+      <p className="text-gray-600 leading-relaxed mb-6">
+        Paul Sir’s Classes stands as one of North Kolkata’s most trusted commerce coaching institutes,
+        strategically located near <span className="font-medium text-gray-800">Girish Park Metro</span> 
+        and <span className="font-medium text-gray-800">Dumdum Station</span>.
+        For over two decades, the institute has consistently produced excellent academic results.
+      </p>
+
+      <p className="text-gray-600 leading-relaxed mb-10">
+        Our approach combines structured syllabus planning, deep conceptual clarity,
+        exam-focused strategy, and personalized mentorship — ensuring every student
+        achieves confidence and academic excellence in commerce subjects.
+      </p>
+
+      {/* Mentor Highlight Card */}
+      <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+
+        <h3 className="text-2xl font-bold text-[#0f172a] mb-2">
+          J. Paul Sir (M.Com, CMA)
+        </h3>
+
+        <p className="text-orange-500 font-medium mb-4">
+          Founder & Lead Commerce Mentor
         </p>
-      </section>
 
-      {/* ================= TEACHER SECTION ================= */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <p className="text-gray-600 leading-relaxed mb-6">
+          Renowned for concept clarity, practical accounting insight,
+          structured notes, and powerful exam strategies. 
+          His mentorship style blends discipline with approachability,
+          making complex financial concepts easy to master.
+        </p>
 
-          <div>
-            <h2 className="text-4xl font-bold text-[#0b1e6d] mb-6">
-              Meet Your Mentor
-            </h2>
+        {/* Stats Row */}
+        <div className="grid grid-cols-2 gap-6">
 
-            <h3 className="text-2xl font-semibold mb-4">
-              J. Paul Sir (M.Com, CMA)
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-4">
-              A highly experienced faculty with 25+ years of excellence in Commerce education.
-              Known for concept clarity, structured notes, exam strategies and personalized doubt clearing.
-            </p>
-
-            <div className="flex gap-6 mt-6">
-              <div className="flex items-center gap-2">
-                <Award className="text-[#f5c542]" />
-                <span>25+ Years Experience</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="text-[#f5c542]" />
-                <span>5.0 Rated Institute</span>
-              </div>
+          <div className="flex items-center gap-4">
+            <div className="bg-orange-100 p-3 rounded-xl">
+              <Award className="text-orange-500" size={20} />
+            </div>
+            <div>
+              <div className="font-bold text-[#0f172a]">25+ Years</div>
+              <div className="text-sm text-gray-600">Teaching Experience</div>
             </div>
           </div>
 
-          <div>
-            <img
-              src="/paul.jpeg"
-              className="rounded-2xl shadow-2xl"
-              alt="Teacher"
-            />
+          <div className="flex items-center gap-4">
+            <div className="bg-orange-100 p-3 rounded-xl">
+              <Star className="text-orange-500" size={20} />
+            </div>
+            <div>
+              <div className="font-bold text-[#0f172a]">5.0 Rated</div>
+              <div className="text-sm text-gray-600">Trusted by Students</div>
+            </div>
           </div>
 
         </div>
-      </section>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  
 
       {/* ================= COURSES ================= */}
       <section id="courses" className="py-20 max-w-6xl mx-auto px-6">
