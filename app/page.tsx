@@ -2,52 +2,14 @@
 
 import { Phone, Mail, MapPin, BookOpen, GraduationCap, Star, Award } from 'lucide-react'
 import AboutSection from '@/components/AboutSection'
+import HeroSection from '@/components/HeroSection'
 
 export default function HomePage() {
   return (
     <div className="bg-white text-gray-800">
 
       {/* ================= HERO SECTION ================= */}
-      <section
-        className="relative h-[90vh] flex items-center justify-center text-center text-white"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1523240795612-9a054b0db644')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1e6d]/90 to-[#1e3a8a]/85"></div>
-
-        <div className="relative max-w-4xl px-6">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            PAUL SIR’S CLASSES
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-200 mb-6">
-            25+ Years of Excellence in Commerce Education
-          </p>
-
-          <p className="text-lg text-gray-300 mb-8">
-            Accounts • Economics • Taxation • Costing • Business Studies  
-            For ISC, CBSE, H.S, B.Com, BBA, MBA, CA, CMA & CS
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="tel:9007019442"
-              className="bg-[#f5c542] text-[#0b1e6d] px-8 py-4 rounded-xl font-semibold shadow-lg hover:scale-105 transition"
-            >
-              Call Now
-            </a>
-            <a
-              href="#courses"
-              className="border border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-[#0b1e6d] transition"
-            >
-              View Courses
-            </a>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* ================= ONLINE LEARNING CENTER SECTION ================= */}
       <AboutSection />
