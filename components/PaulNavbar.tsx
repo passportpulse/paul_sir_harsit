@@ -49,8 +49,8 @@ export default function PaulNavbar() {
             <Image
               src="/logo.png"   // 🔥 change if needed
               alt="Paul Sir Logo"
-              width={55}
-              height={55}
+              width={70}
+              height={70}
               className="rounded-full"
             />
          

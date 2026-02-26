@@ -12,7 +12,7 @@ export default function PaulFooter() {
           
           {/* Column 1: About Institute */}
           <div className="space-y-4">
-          <img src="/logo.png" alt=""  className="w-24 h-24"/>
+          <img src="/logo.png" alt=""  className="w-30 h-30"/>
             <p className="text-gray-300 text-sm leading-relaxed">
               25 Years Experienced Commerce Faculty. Expert guidance for ICSE, ISC, CBSE, B.Com, CA, CMA, CS and MBA students.
             </p>
