@@ -1,4 +1,12 @@
-import { GraduationCap, Users, Clock, Star, ArrowRight } from 'lucide-react'
+'use client'
+
+import {
+  GraduationCap,
+  Users,
+  Clock,
+  Star,
+  ArrowRight
+} from 'lucide-react'
 
 interface CourseCardProps {
   title: string
@@ -15,11 +23,6 @@ interface CourseCardProps {
   onEnroll?: () => void
 }
 
-const handleEnroll = (courseTitle: string) => {
-  // Navigate to enroll page with course pre-selected
-  window.location.href = `/enroll?course=${encodeURIComponent(courseTitle)}`
-}
-
 export default function CourseCard({
   title,
   description,
@@ -34,8 +37,8 @@ export default function CourseCard({
   courseId,
   onEnroll
 }: CourseCardProps) {
+
   const handleViewDetails = () => {
-    // Navigate to course detail page
     const slugMap: { [key: number]: string } = {
       1: 'icse-accounts-economics',
       2: 'isc-commerce-stream',
@@ -52,79 +55,105 @@ export default function CourseCard({
       13: 'cs-foundation-program',
       14: 'cs-executive-program'
     }
-    
+
     const slug = slugMap[courseId] || `course-${courseId}`
     window.location.href = `/courses/${slug}`
   }
+
   return (
-    <div className={`bg-white rounded-2xl shadow-lg border-2 overflow-hidden hover:shadow-2xl transition-all duration-300 group ${
-      isPopular ? 'border-[#f5c542]' : 'border-gray-200'
-    }`}>
-      
+    <div className="relative bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group">
+
       {/* Popular Badge */}
       {isPopular && (
-        <div className="absolute top-4 right-4 z-10">
-          <span className="bg-[#f5c542] text-[#0b1e6d] px-3 py-1 rounded-full text-sm font-semibold">
-            Popular
+        <div className="absolute top-5 left-5 z-20">
+          <span className="bg-[#f5c542] text-[#0b1e6d] px-4 py-1 rounded-full text-xs font-bold shadow-md">
+            Most Popular
           </span>
         </div>
       )}
 
-      {/* Course Image */}
-      <div className="relative h-48 bg-gradient-to-br from-[#0b1e6d] to-[#1e3a8a] overflow-hidden">
+      {/* Image Section */}
+      <div className="relative h-52 overflow-hidden">
         {image ? (
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
+          <>
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+          </>
         ) : (
-          <div className="flex items-center justify-center h-full">
-            <GraduationCap className="h-16 w-16 text-white opacity-50" />
+          <div className="h-full bg-gradient-to-br from-[#0b1e6d] to-[#1e3a8a] flex items-center justify-center">
+            <GraduationCap className="h-16 w-16 text-white/40" />
           </div>
         )}
       </div>
 
-      {/* Course Content */}
-      <div className="p-6">
-        {/* Title and Description */}
-        <h3 className="text-xl font-bold text-[#0b1e6d] mb-3">{title}</h3>
-        <p className="text-gray-600 mb-4 line-clamp-2">{description}</p>
+      {/* Content */}
+      <div className="p-8">
 
-        {/* Course Features */}
-        <div className="space-y-3 mb-4">
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center gap-2 text-gray-600">
-              <Clock className="h-4 w-4 text-[#f5c542]" />
-              <span>{duration}</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-600">
-              <Users className="h-4 w-4 text-[#f5c542]" />
-              <span>{students}</span>
-            </div>
+        {/* Title */}
+        <h3 className="text-xl font-bold text-[#0f172a] mb-3 leading-snug">
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 text-sm mb-6 line-clamp-2">
+          {description}
+        </p>
+
+        {/* Meta Info */}
+        <div className="flex items-center justify-between text-sm mb-6">
+
+          <div className="flex items-center gap-2 text-gray-600">
+            <Clock size={16} className="text-orange-500" />
+            {duration}
           </div>
-          
-          <div className="flex items-center justify-between text-sm">
-            <span className="bg-gray-100 px-2 py-1 rounded text-gray-700">{level}</span>
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star 
-                  key={i} 
-                  className={`h-4 w-4 ${i < rating ? 'text-[#f5c542] fill-current' : 'text-gray-300'}`} 
-                />
-              ))}
-              <span className="text-gray-600 ml-1">({rating})</span>
-            </div>
+
+          <div className="flex items-center gap-2 text-gray-600">
+            <Users size={16} className="text-orange-500" />
+            {students}
           </div>
+
         </div>
 
-        {/* Features List */}
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-700 mb-2">What you'll learn:</h4>
-          <ul className="space-y-1">
+        {/* Level + Rating */}
+        <div className="flex items-center justify-between mb-6">
+
+          <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">
+            {level}
+          </span>
+
+          <div className="flex items-center gap-1">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                size={14}
+                className={
+                  i < rating
+                    ? "text-orange-500 fill-orange-500"
+                    : "text-gray-300"
+                }
+              />
+            ))}
+            <span className="text-xs text-gray-500 ml-1">
+              ({rating})
+            </span>
+          </div>
+
+        </div>
+
+        {/* Features */}
+        <div className="mb-8">
+          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">
+            What You'll Learn
+          </h4>
+
+          <ul className="space-y-2">
             {features.slice(0, 3).map((feature, index) => (
-              <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                <span className="text-[#f5c542] mt-0.5">•</span>
+              <li key={index} className="text-sm text-gray-600 flex items-start gap-2">
+                <span className="text-orange-500 mt-1">•</span>
                 <span>{feature}</span>
               </li>
             ))}
@@ -136,24 +165,41 @@ export default function CourseCard({
           </ul>
         </div>
 
-        {/* Price and CTA */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-          <div className="flex gap-2">
+        {/* Price + CTA */}
+        <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+
+          {/* Price */}
+          <div>
+            {price ? (
+              <div className="text-lg font-bold text-[#0f172a]">
+                ₹{price}
+              </div>
+            ) : (
+              <span className="text-sm text-gray-500">Contact for Fees</span>
+            )}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex gap-3">
+
             <button
               onClick={handleViewDetails}
-              className="border border-[#0b1e6d] text-[#0b1e6d] px-4 py-2 rounded-xl font-semibold transition-all duration-200 hover:bg-[#0b1e6d] hover:text-white"
+              className="border border-[#0b1e6d] text-[#0b1e6d] px-4 py-2 rounded-xl font-semibold text-sm transition hover:bg-[#0b1e6d] hover:text-white"
             >
-              View Details
+              Details
             </button>
+
             <button
               onClick={onEnroll}
-              className="bg-[#0b1e6d] hover:bg-[#1a3a8a] text-white px-4 py-2 rounded-xl font-semibold transition-all duration-200 flex items-center gap-2"
+              className="bg-[#0b1e6d] hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-semibold text-sm transition flex items-center gap-2"
             >
               Enroll
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight size={16} />
             </button>
+
           </div>
         </div>
+
       </div>
     </div>
   )

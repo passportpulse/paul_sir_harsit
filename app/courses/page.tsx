@@ -294,81 +294,101 @@ export default function CoursesPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0b1e6d] to-[#1e3a8a] text-white py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Our Courses
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            Comprehensive Commerce Education for Every Level
-          </p>
-          <div className="flex flex-wrap justify-center gap-6 text-lg">
-            <div className="flex items-center gap-2">
-              <GraduationCap className="text-[#f5c542]" />
-              <span>14+ Courses</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Users className="text-[#f5c542]" />
-              <span>5000+ Students</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Star className="text-[#f5c542]" />
-              <span>4.8 Avg Rating</span>
-            </div>
-          </div>
-        </div>
-      </section>
+ {/* ================= PREMIUM HERO ================= */}
+<section className="relative bg-gradient-to-br from-[#0b1e6d] via-[#112a88] to-[#1e3a8a] text-white overflow-hidden">
+  <div className="absolute inset-0 bg-black/20"></div>
+
+  <div className="relative max-w-7xl mx-auto px-6 py-28 text-center">
+
+    <p className="text-[#f5c542] uppercase tracking-wider font-semibold mb-4">
+      Paul Sir’s Classes
+    </p>
+
+    <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      Explore Our Commerce Courses
+    </h1>
+
+    <p className="text-lg md:text-xl text-white/80 mb-14 max-w-3xl mx-auto">
+      Structured, exam-focused commerce education designed for school,
+      undergraduate, and professional students.
+    </p>
+
+    {/* Glass Stats Bar */}
+    <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+
+      <div className="flex items-center justify-center gap-3">
+        <GraduationCap className="text-[#f5c542]" />
+        <span className="font-semibold">14+ Courses</span>
+      </div>
+
+      <div className="flex items-center justify-center gap-3">
+        <Users className="text-[#f5c542]" />
+        <span className="font-semibold">5000+ Students</span>
+      </div>
+
+      <div className="flex items-center justify-center gap-3">
+        <Star className="text-[#f5c542]" />
+        <span className="font-semibold">4.8 Average Rating</span>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* Search and Filter Section */}
-      <section className="py-8 bg-white border-b">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            
-            {/* Search Bar */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <input
-                type="text"
-                placeholder="Search courses..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f5c542] focus:border-transparent"
-              />
-            </div>
+   {/* ================= SEARCH & FILTER ================= */}
+<section className="py-10 bg-white border-b">
+  <div className="max-w-7xl mx-auto px-6">
 
-            {/* Category Filters */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-200 ${
-                    selectedCategory === category.id
-                      ? 'bg-[#0b1e6d] text-white border-[#0b1e6d]'
-                      : 'bg-white text-gray-700 border-gray-300 hover:border-[#0b1e6d]'
-                  }`}
-                >
-                  {category.icon}
-                  <span>{category.name}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+
+      {/* Search */}
+      <div className="relative w-full lg:max-w-md">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+        <input
+          type="text"
+          placeholder="Search for courses..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#0b1e6d] focus:outline-none shadow-sm"
+        />
+      </div>
+
+      {/* Category Pills */}
+      <div className="flex flex-wrap gap-3">
+        {categories.map((category) => (
+          <button
+            key={category.id}
+            onClick={() => setSelectedCategory(category.id)}
+            className={`px-5 py-2 rounded-full font-medium transition-all duration-200 ${
+              selectedCategory === category.id
+                ? "bg-[#0b1e6d] text-white shadow-md"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            {category.name}
+          </button>
+        ))}
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* Courses Grid */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-[#0b1e6d] mb-2">
-              {selectedCategory === 'all' ? 'All Available Courses' : categories.find(c => c.id === selectedCategory)?.name}
-            </h2>
-            <p className="text-gray-600">
-              Showing {filteredCourses.length} {filteredCourses.length === 1 ? 'course' : 'courses'}
-            </p>
-          </div>
+<section className="py-24 bg-[#f8f9fb]">
+        <div className="max-w-7xl mx-auto px-6">
+       <div className="mb-12">
+  <h2 className="text-3xl font-bold text-[#0f172a] mb-2">
+    {selectedCategory === 'all'
+      ? 'All Available Courses'
+      : categories.find(c => c.id === selectedCategory)?.name}
+  </h2>
+  <p className="text-gray-600">
+    Showing {filteredCourses.length} {filteredCourses.length === 1 ? 'course' : 'courses'}
+  </p>
+</div>
 
           {filteredCourses.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -389,44 +409,52 @@ export default function CoursesPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-16">
-              <div className="bg-gray-100 rounded-full w-24 h-24 mx-auto mb-6 flex items-center justify-center">
-                <Search className="h-12 w-12 text-gray-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">No courses found</h3>
-              <p className="text-gray-500">Try adjusting your search or filter criteria</p>
-            </div>
+          <div className="text-center py-20">
+  <div className="bg-white shadow-lg rounded-3xl p-12 max-w-md mx-auto">
+    <Search className="h-14 w-14 text-gray-300 mx-auto mb-6" />
+    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+      No courses found
+    </h3>
+    <p className="text-gray-500">
+      Try adjusting your search or selecting a different category.
+    </p>
+  </div>
+</div>
           )}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#0b1e6d] to-[#1e3a8a] text-white text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Can't Find What You're Looking For?
-          </h2>
-          <p className="text-xl mb-8 text-gray-200">
-            Contact us for personalized course recommendations and special batches
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="bg-white text-[#0b1e6d] px-8 py-4 rounded-xl font-semibold shadow-lg hover:scale-105 transition flex items-center justify-center gap-2"
-            >
-              <Filter className="h-5 w-5" />
-              Get Counseling
-            </a>
-            <a
-              href="tel:9007019442"
-              className="border border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-[#0b1e6d] transition flex items-center justify-center gap-2"
-            >
-              Call Now
-            </a>
-          </div>
-        </div>
-      </section>
+    {/* ================= FINAL CTA ================= */}
+<section className="py-28 bg-gradient-to-br from-[#0b1e6d] to-[#1e3a8a] text-white text-center">
+  <div className="max-w-4xl mx-auto px-6">
+
+    <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      Need Personalized Guidance?
+    </h2>
+
+    <p className="text-lg text-white/80 mb-10">
+      Speak with our academic counselor and choose the right commerce path for your future.
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-6 justify-center">
+      <a
+        href="/contact"
+        className="bg-white text-[#0b1e6d] px-8 py-4 rounded-xl font-semibold shadow-lg hover:scale-105 transition"
+      >
+        Get Counseling
+      </a>
+
+      <a
+        href="tel:9007019442"
+        className="border border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-[#0b1e6d] transition"
+      >
+        Call Now
+      </a>
+    </div>
+
+  </div>
+</section>
 
     </div>
   )

@@ -107,7 +107,7 @@ export default function EnrollPage() {
       </section>
 
       {/* ================= ENROLLMENT FORM ================= */}
-      <section className="py-20 max-w-6xl mx-auto px-6">
+      <section className="py-20 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-3 gap-12">
           
           {/* Form Section */}
