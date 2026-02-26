@@ -36,6 +36,9 @@ export default function ContactPage() {
 
       {/* ================= HERO ================= */}
       <section className="bg-white text-gray-700 py-12 relative overflow-hidden">
+
+
+
         <div className="relative max-w-7xl mx-auto px-6 ">
           <div className='flex justify-between items-center'>
             <div>
@@ -44,31 +47,33 @@ export default function ContactPage() {
               </h1>
               <p className="text-lg md:text-xl text-gray-500 max-w-2xl">
                 Have questions about admissions or courses?
-                We’re here to guide you every step of the way.
+                We're here to guide you every step of the way.
               </p>
             </div>
             <img src="/logo-soc.png" alt="" />
           </div>
-        </div>
 
+     <div className="absolute bottom-0 left-0 right-0 h-12 bg-white transform translate-y-1/2 rotate-180"><svg className="h-full w-full text-yellow-500" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,0 Z" fill="currentColor"></path></svg></div>
+        </div>
+   
       </section>
 
-  
+
 
       {/* ================= CONTACT CARDS ================= */}
       <section className="py-24 bg-white">
-               <div className="max-w-7xl mx-auto px-6 mb-12 ">
+        <div className="max-w-7xl mx-auto px-6 mb-12 ">
           <h2 className="text-3xl font-bold text-[#0f172a] mb-4">
             Get in Touch With Us
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl ">
-            We're here to help you succeed in your commerce education journey. 
+            We're here to help you succeed in your commerce education journey.
             Reach out through any of the following channels.
           </p>
         </div>
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
-        
+
 
           {/* RIGHT SIDE BOXES */}
           <div className="space-y-8">
@@ -142,57 +147,57 @@ export default function ContactPage() {
             </div>
 
           </div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <Input label="Your Name" placeholder="Your Name" name="name" value={formData.name} onChange={handleChange} />
-                <Input label="Email Address" placeholder="Email Address" name="email" type="email" value={formData.email} onChange={handleChange} />
+            <div className="grid md:grid-cols-2 gap-6">
+              <Input label="Your Name" placeholder="Your Name" name="name" value={formData.name} onChange={handleChange} />
+              <Input label="Email Address" placeholder="Email Address" name="email" type="email" value={formData.email} onChange={handleChange} />
+            </div>
+
+            <div className="grid md:grid-cols-2 items-center gap-6">
+              <Input label="Phone Number" placeholder="Phone Number" name="phone" value={formData.phone} onChange={handleChange} />
+              <div>
+                <label className="block mb-2 text-sm font-semibold text-gray-700">
+                  Course
+                </label>
+                <select
+                  name="course"
+                  value={formData.course}
+                  onChange={handleChange}
+                  className="w-full text-gray-500 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f5c542] focus:border-transparent outline-none"
+                >
+                  <option value="">Select Course</option>
+                  <option>ICSE</option>
+                  <option>ISC</option>
+                  <option>CBSE</option>
+                  <option>H.S</option>
+                  <option>B.Com</option>
+                  <option>BBA</option>
+                  <option>MBA</option>
+                  <option>CA</option>
+                  <option>CMA</option>
+                  <option>CS</option>
+                </select>
               </div>
+            </div>
 
-              <div className="grid md:grid-cols-2 items-center gap-6">
-                <Input label="Phone Number" placeholder="Phone Number" name="phone" value={formData.phone} onChange={handleChange} />
-                <div>
-                  <label className="block mb-2 text-sm font-semibold text-gray-700">
-                    Course
-                  </label>
-                  <select
-                    name="course"
-                    value={formData.course}
-                    onChange={handleChange}
-                    className="w-full text-gray-500 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f5c542] focus:border-transparent outline-none"
-                  >
-                    <option value="">Select Course</option>
-                    <option>ICSE</option>
-                    <option>ISC</option>
-                    <option>CBSE</option>
-                    <option>H.S</option>
-                    <option>B.Com</option>
-                    <option>BBA</option>
-                    <option>MBA</option>
-                    <option>CA</option>
-                    <option>CMA</option>
-                    <option>CS</option>
-                  </select>
-                </div>
-              </div>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows={5}
+              placeholder="Tel  us about your requirements..."
+              className="w-full px-4 py-3 text-gray-500 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f5c542] focus:border-transparent outline-none"
+            />
 
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={5}
-                placeholder="Tel  us about your requirements..."
-                className="w-full px-4 py-3 text-gray-500 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f5c542] focus:border-transparent outline-none"
-              />
-
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-[#f5c542] to-[#ffda6a] text-[#0b1e6d] font-semibold py-4 rounded-xl shadow-lg hover:scale-105 transition duration-300 flex justify-center items-center gap-2"
-              >
-                <Send className="h-5 w-5" />
-                Send Message
-              </button>
-            </form>
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-[#f5c542] to-[#ffda6a] text-[#0b1e6d] font-semibold py-4 rounded-xl shadow-lg hover:scale-105 transition duration-300 flex justify-center items-center gap-2"
+            >
+              <Send className="h-5 w-5" />
+              Send Message
+            </button>
+          </form>
         </div>
       </section>
 
@@ -201,8 +206,8 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
 
           {/* ===== FORM ===== */}
-        
-  {/* LEFT IMAGE */}
+
+          {/* LEFT IMAGE */}
           <div className="relative">
             <img
               src="/contact-side.png"
