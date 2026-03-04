@@ -1,10 +1,3 @@
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Terms of Service - Paul Sir\'s Classes',
-  description: 'Terms of Service for Paul Sir\'s Classes - Commerce Excellence Since 25 Years',
-}
-
 export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-gray-50">

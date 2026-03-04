@@ -1,10 +1,3 @@
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Privacy Policy - Paul Sir\'s Classes',
-  description: 'Privacy Policy for Paul Sir\'s Classes - Commerce Excellence Since 25 Years',
-}
-
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-gray-50">
