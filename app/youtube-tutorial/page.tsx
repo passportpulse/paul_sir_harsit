@@ -880,9 +880,10 @@ export default function YouTubeTutorialPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-6">
+<div className="space-y-6">
+  <div className="sticky top-20 space-y-6">
               {/* Quick Links */}
-              <div className="bg-white rounded-2xl shadow-lg p-6">
+              <div className="bg-white rounded-2xl shadow-lg p-6 ">
                 <h3 className="text-xl font-bold text-[#0b1e6d] mb-4">Quick Links</h3>
                 <div className="space-y-3">
                   <a 
@@ -960,6 +961,7 @@ export default function YouTubeTutorialPage() {
                     paulsirsclasses@gmail.com
                   </p>
                 </div>
+              </div>
               </div>
             </div>
           </div>
