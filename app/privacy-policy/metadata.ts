@@ -1,4 +1,5 @@
 export const privacyPolicyMetadata = {
+  metadataBase: new URL('https://paulsirsclasses.com'),
   title: "Privacy Policy - Paul Sir's Classes | Data Protection",
   description: "Privacy Policy for Paul Sir's Classes. Learn how we collect, use, and protect your personal information and educational data.",
   keywords: [

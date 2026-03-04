@@ -1,4 +1,5 @@
 export const feedbackMetadata = {
+  metadataBase: new URL('https://paulsirsclasses.com'),
   title: "Student Feedback - Paul Sir's Classes | Reviews & Testimonials",
   description: "Read authentic student feedback and reviews for Paul Sir's Classes. See what our students say about our commerce coaching excellence.",
   keywords: [

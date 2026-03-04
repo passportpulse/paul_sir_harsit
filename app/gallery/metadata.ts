@@ -1,4 +1,5 @@
 export const galleryMetadata = {
+  metadataBase: new URL('https://paulsirsclasses.com'),
   title: "Gallery - Paul Sir's Classes | Photos & Videos",
   description: "Explore Paul Sir's Classes gallery featuring classroom photos, events, achievements, student testimonials, and campus videos.",
   keywords: [

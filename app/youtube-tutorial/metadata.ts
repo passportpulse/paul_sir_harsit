@@ -1,4 +1,5 @@
 export const youtubeTutorialMetadata = {
+  metadataBase: new URL('https://paulsirsclasses.com'),
   title: "YouTube Upload Tutorial - Paul Sir's Classes | Video Management Guide",
   description: "Complete step-by-step guide to upload and manage YouTube videos for Paul Sir's Classes. Learn video optimization, embedding, and analytics.",
   keywords: [

@@ -1,4 +1,5 @@
 export const enrollMetadata = {
+  metadataBase: new URL('https://paulsirsclasses.com'),
   title: "Enroll Now - Paul Sir's Classes | Commerce Education Admission",
   description: "Enroll in Paul Sir's Classes for expert commerce coaching. Admissions open for ICSE, ISC, CBSE, B.Com, CA, CMA, and CS courses with 25+ years of excellence.",
   keywords: [

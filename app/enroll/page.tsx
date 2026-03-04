@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import EnrollHero from './components/EnrollHero'
 import EnrollForm from './components/EnrollForm'
 import EnrollSidebar from './components/EnrollSidebar'
 import EnrollCTA from './components/EnrollCTA'
 
-export default function EnrollPage() {
+function EnrollPageContent() {
   const searchParams = useSearchParams()
   const courseFromUrl = searchParams.get('course')
 
@@ -159,5 +159,13 @@ export default function EnrollPage() {
 
       <EnrollCTA />
     </div>
+  )
+}
+
+export default function EnrollPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EnrollPageContent />
+    </Suspense>
   )
 }

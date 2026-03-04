@@ -1,4 +1,5 @@
 export const aboutMetadata = {
+  metadataBase: new URL('https://paulsirsclasses.com'),
   title: "About Paul Sir's Classes - 25+ Years of Excellence in Commerce Education",
   description: "Paul Sir's Classes is a premier commerce coaching institute in Kolkata with over 25 years of experience. Specializing in ICSE, ISC, CBSE, B.Com, CA, CMA, and CS courses with expert faculty and proven results.",
   keywords: [

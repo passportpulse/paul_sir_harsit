@@ -1,4 +1,5 @@
 export const contactMetadata = {
+  metadataBase: new URL('https://paulsirsclasses.com'),
   title: "Contact Paul Sir's Classes - Get in Touch for Commerce Education",
   description: "Contact Paul Sir's Classes for admissions, course information, and queries. Visit our branches in Kolkata or call us for expert commerce coaching.",
   keywords: [

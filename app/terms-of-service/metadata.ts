@@ -1,4 +1,5 @@
 export const termsOfServiceMetadata = {
+  metadataBase: new URL('https://paulsirsclasses.com'),
   title: "Terms of Service - Paul Sir's Classes | Legal Agreement",
   description: "Terms of Service for Paul Sir's Classes. Read our legal agreement for course enrollment, payments, and student responsibilities.",
   keywords: [
