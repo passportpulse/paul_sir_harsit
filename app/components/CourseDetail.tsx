@@ -55,6 +55,84 @@ interface CourseDetailProps {
 export default function CourseDetail({ course, onEnroll }: CourseDetailProps) {
   const [activeTab, setActiveTab] = useState('overview')
 
+  const handleEnroll = () => {
+    // Navigate to enroll page with course pre-selected
+    window.location.href = `/enroll?course=${encodeURIComponent(course.title)}`
+  }
+
+  const handleDownloadPDF = () => {
+    // Generate and download course brochure PDF
+    const courseContent = `
+      PAUL SIR'S CLASSES - COURSE BROCHURE
+      
+      Course: ${course.title}
+      Duration: ${course.duration}
+      Level: ${course.level}
+      Students Enrolled: ${course.students}
+      Rating: ${course.rating}/5
+      
+      Description:
+      ${course.longDescription || course.description}
+      
+      Key Features:
+      ${course.features.map(feature => `• ${feature}`).join('\n')}
+      
+      Course Curriculum:
+      ${course.curriculum.map(module => 
+        `${module.module} (${module.duration}):\n${module.topics.map(topic => `  - ${topic}`).join('\n')}`
+      ).join('\n\n')}
+      
+      Instructor:
+      ${course.instructor.name}
+      ${course.instructor.title}
+      ${course.instructor.experience}
+      
+      Schedule:
+      ${course.schedule.days} - ${course.schedule.time}
+      Mode: ${course.schedule.mode}
+      
+      Requirements:
+      ${course.requirements.map(req => `• ${req}`).join('\n')}
+      
+      Learning Outcomes:
+      ${course.outcomes.map(outcome => `• ${outcome}`).join('\n')}
+      
+      Study Materials:
+      ${course.materials.map(material => `• ${material}`).join('\n')}
+      
+      Certification: ${course.certification ? 'Available' : 'Not Available'}
+      Placement Assistance: ${course.placement ? 'Available' : 'Not Available'}
+      
+      Contact Information:
+      📞 Phone: 9007019442, 9830275787
+      📧 Email: paulsirsclasses@gmail.com
+      📍 Main Branch: 35B, South Sinthee Road, Kolkata – 700050
+      📍 Other Branch: 148, Ramdulal Sarkar Street, Hedua, Kolkata – 700006
+      
+      Website: www.paulsirsclasses.com
+    `.trim()
+
+    // Create a blob with the content
+    const blob = new Blob([courseContent], { type: 'text/plain' })
+    
+    // Create download link
+    const url = window.URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${course.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_brochure.txt`
+    
+    // Trigger download
+    document.body.appendChild(a)
+    a.click()
+    
+    // Cleanup
+    document.body.removeChild(a)
+    window.URL.revokeObjectURL(url)
+    
+    // Show success message
+    alert('Course brochure downloaded successfully!')
+  }
+
   return (
     <div className="bg-white">
 
@@ -99,19 +177,22 @@ export default function CourseDetail({ course, onEnroll }: CourseDetailProps) {
               {/* Premium CTA Buttons */}
               <div className="flex flex-wrap gap-4">
                 <button
-                  onClick={onEnroll}
+                  onClick={handleEnroll}
                   className="bg-[#f5c542] hover:bg-[#e4b338] text-[#0b1e6d] px-8 py-4 rounded-xl font-bold transition shadow-xl hover:scale-105 flex items-center gap-2"
                 >
                   Enroll Now
                   <ArrowRight size={18} />
                 </button>
 
-                <a
-                  href="tel:9007019442"
-                  className="border border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-[#0b1e6d] transition"
+                <button
+                  onClick={handleDownloadPDF}
+                  className="bg-white/20 backdrop-blur-xl border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition flex items-center gap-2"
                 >
-                  Call Us
-                </a>
+                  <Download size={18} />
+                  Download PDF
+                </button>
+
+            
               </div>
 
             </div>
@@ -151,7 +232,7 @@ export default function CourseDetail({ course, onEnroll }: CourseDetailProps) {
 
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-2 mb-8 border-b">
-            {['overview', 'curriculum', 'instructor', 'requirements', 'outcomes'].map((tab) => (
+            {['overview', 'curriculum', 'instructor', 'requirements', 'outcomes', 'demo'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -297,6 +378,170 @@ export default function CourseDetail({ course, onEnroll }: CourseDetailProps) {
                   </div>
                 </div>
               )}
+
+              {/* Demo Tab */}
+              {activeTab === 'demo' && (
+                <div className="space-y-8">
+                  <h3 className="text-2xl font-bold text-[#0b1e6d] mb-6">Watch Demo Classes</h3>
+                  
+                  {/* Featured Demo Video */}
+                  <div className="bg-gradient-to-br from-[#0b1e6d] to-[#1e3a8a] rounded-2xl p-8 text-white">
+                    <div className="grid lg:grid-cols-2 gap-8 items-center">
+                      <div>
+                        <h4 className="text-3xl font-bold mb-4">Experience Our Teaching Style</h4>
+                        <p className="text-white/80 mb-6">
+                          Get a glimpse of our comprehensive commerce education approach with expert faculty and interactive learning methods.
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                          <button className="bg-[#f5c542] hover:bg-[#e4b338] text-[#0b1e6d] px-6 py-3 rounded-xl font-semibold transition flex items-center gap-2">
+                            <PlayCircle className="h-5 w-5" />
+                            Watch Full Demo
+                          </button>
+                          <button className="bg-white/20 backdrop-blur border border-white/30 px-6 py-3 rounded-xl font-semibold hover:bg-white/30 transition">
+                            More Videos
+                          </button>
+                        </div>
+                      </div>
+                      <div className="bg-black/20 rounded-xl p-4">
+                        <div className="aspect-video bg-black/40 rounded-lg flex items-center justify-center">
+                          <PlayCircle className="h-16 w-16 text-white/80 hover:text-white transition cursor-pointer" />
+                        </div>
+                        <p className="text-center mt-3 text-white/70">Introduction to {course.title}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Sample Class Videos */}
+                  <div>
+                    <h4 className="text-xl font-bold text-[#0b1e6d] mb-6">Sample Class Recordings</h4>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {[
+                        {
+                          title: "Chapter 1: Basic Concepts",
+                          duration: "45:30",
+                          description: "Understanding fundamental principles with real-world examples",
+                          thumbnail: "demo1"
+                        },
+                        {
+                          title: "Problem Solving Session",
+                          duration: "38:15",
+                          description: "Step-by-step approach to complex problems",
+                          thumbnail: "demo2"
+                        },
+                        {
+                          title: "Exam Preparation Tips",
+                          duration: "52:20",
+                          description: "Strategic approach to scoring high marks",
+                          thumbnail: "demo3"
+                        },
+                        {
+                          title: "Practical Applications",
+                          duration: "41:45",
+                          description: "Applying theory to practical business scenarios",
+                          thumbnail: "demo4"
+                        },
+                        {
+                          title: "Q&A Session",
+                          duration: "35:10",
+                          description: "Student doubts and expert solutions",
+                          thumbnail: "demo5"
+                        },
+                        {
+                          title: "Revision Workshop",
+                          duration: "48:55",
+                          description: "Complete chapter revision with key points",
+                          thumbnail: "demo6"
+                        }
+                      ].map((video, index) => (
+                        <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                          <div className="relative">
+                            <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                              <PlayCircle className="h-12 w-12 text-[#0b1e6d]/60 hover:text-[#0b1e6d] transition" />
+                            </div>
+                            <div className="absolute bottom-2 right-2 bg-black/70 text-white px-2 py-1 rounded text-xs">
+                              {video.duration}
+                            </div>
+                            <div className="absolute top-2 left-2 bg-[#f5c542] text-[#0b1e6d] px-2 py-1 rounded text-xs font-semibold">
+                              FREE
+                            </div>
+                          </div>
+                          <div className="p-4">
+                            <h5 className="font-semibold text-gray-800 mb-2">{video.title}</h5>
+                            <p className="text-sm text-gray-600 line-clamp-2">{video.description}</p>
+                            <div className="mt-3 flex items-center justify-between">
+                              <span className="text-xs text-gray-500">1.2K views</span>
+                              <button className="text-[#0b1e6d] hover:text-[#1e3a8a] text-sm font-medium transition">
+                                Watch →
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Student Testimonials */}
+                  <div>
+                    <h4 className="text-xl font-bold text-[#0b1e6d] mb-6">Student Success Stories</h4>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {[
+                        {
+                          name: "Ananya Sharma",
+                          course: "B.Com Semester 1",
+                          rating: 5,
+                          comment: "The demo classes helped me understand the teaching methodology. Paul Sir's explanation makes complex topics so easy to grasp!",
+                          result: "Scored 92% in exams"
+                        },
+                        {
+                          name: "Rahul Verma",
+                          course: "CA Foundation",
+                          rating: 5,
+                          comment: "After watching the demo videos, I was confident about joining. The problem-solving approach is exceptional.",
+                          result: "Cleared CA Foundation in first attempt"
+                        }
+                      ].map((testimonial, index) => (
+                        <div key={index} className="bg-gray-50 rounded-xl p-6">
+                          <div className="flex items-center gap-1 mb-3">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="h-4 w-4 text-[#f5c542] fill-current" />
+                            ))}
+                          </div>
+                          <p className="text-gray-700 mb-4 italic">"{testimonial.comment}"</p>
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <p className="font-semibold text-gray-800">{testimonial.name}</p>
+                              <p className="text-sm text-gray-600">{testimonial.course}</p>
+                            </div>
+                            <div className="text-right">
+                              <p className="text-sm font-medium text-[#f5c542]">{testimonial.result}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Call to Action */}
+                  <div className="bg-gradient-to-r from-[#f5c542] to-[#e4b338] rounded-2xl p-8 text-center">
+                    <h4 className="text-2xl font-bold text-[#0b1e6d] mb-4">Ready to Start Learning?</h4>
+                    <p className="text-[#0b1e6d]/80 mb-6 max-w-2xl mx-auto">
+                      Join thousands of successful students who have transformed their commerce education with Paul Sir's Classes.
+                    </p>
+                    <div className="flex flex-wrap gap-4 justify-center">
+                      <button
+                        onClick={handleEnroll}
+                        className="bg-[#0b1e6d] hover:bg-[#1e3a8a] text-white px-8 py-4 rounded-xl font-semibold transition flex items-center gap-2"
+                      >
+                        Enroll Now
+                        <ArrowRight size={18} />
+                      </button>
+                      <button className="bg-white/20 backdrop-blur border border-white/30 text-[#0b1e6d] px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition">
+                        Download Brochure
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -365,7 +610,7 @@ export default function CourseDetail({ course, onEnroll }: CourseDetailProps) {
   </p>
 
   <button
-    onClick={onEnroll}
+    onClick={handleEnroll}
     className="w-full bg-[#0b1e6d] hover:bg-orange-500 text-white py-4 rounded-xl font-semibold transition mb-4"
   >
     Enroll Now

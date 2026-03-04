@@ -61,6 +61,9 @@ export default function PaulNavbar() {
 
             <Link href="/" className="navLink">Home</Link>
             <Link href="/about" className="navLink">About</Link>
+            <Link href="/gallery" className="navLink">Gallery</Link>
+            <Link href="/feedback" className="navLink">Feedback</Link>
+            <Link href="/youtube-tutorial" className="navLink">YouTube Tutorial</Link>
 
             {/* DESKTOP DROPDOWN */}
             <div className="relative" ref={dropdownRef}>
@@ -138,6 +141,9 @@ export default function PaulNavbar() {
         <div className="lg:hidden bg-[#0b1e6d] px-6 py-6 space-y-4">
           <Link href="/" className="mobileLink">Home</Link>
           <Link href="/about" className="mobileLink">About</Link>
+          <Link href="/gallery" className="mobileLink">Gallery</Link>
+          <Link href="/feedback" className="mobileLink">Feedback</Link>
+          <Link href="/youtube-tutorial" className="mobileLink">YouTube Tutorial</Link>
 
           <button
             onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}

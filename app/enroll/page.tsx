@@ -1,16 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Phone, Mail, MapPin, GraduationCap, Users, Award, Clock, CheckCircle, Send, ArrowRight } from 'lucide-react'
 
 export default function EnrollPage() {
+  const searchParams = useSearchParams()
+  const courseFromUrl = searchParams.get('course')
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
     whatsapp: '',
-    course: '',
+    course: courseFromUrl ? decodeURIComponent(courseFromUrl) : '',
     currentLevel: '',
     preferredMode: '',
     address: '',
@@ -19,33 +23,76 @@ export default function EnrollPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  // Update form when course parameter changes in URL
+  useEffect(() => {
+    if (courseFromUrl) {
+      setFormData(prev => ({
+        ...prev,
+        course: decodeURIComponent(courseFromUrl)
+      }))
+    }
+  }, [courseFromUrl])
+
   const courses = [
     {
       category: "School Programs",
       courses: [
+        "ICSE Accounts & Economics",
         "ICSE - Accounts & Economics",
+        "ISC Commerce Stream",
         "ISC - Accounts & Economics", 
+        "CBSE Commerce Complete",
         "CBSE - Accounts & Economics",
-        "H.S - Accounts & Economics"
+        "H.S - Accounts & Economics",
+        "Higher Secondary Commerce",
+        "ICSE Commerce (Class 9-10)",
+        "ISC Commerce (Class 11-12)",
+        "CBSE Commerce (Class 11-12)",
+        "Higher Secondary (WB Board)",
+        "Accounts & Economics",
+        "Business Studies",
+        "Commercial Applications"
       ]
     },
     {
       category: "College Programs",
       courses: [
-        "B.Com (All Semesters)",
-        "BBA",
-        "MBA"
+        "B.Com Complete Program",
+        "B.Com Honours (Semester 1-6)",
+        "BBA Specialized Coaching",
+        "MBA Executive Program",
+        "Financial Accounting",
+        "Cost & Management Accounting",
+        "Corporate Accounting",
+        "Direct Taxation",
+        "Indirect Taxation",
+        "Business Law",
+        "Economics"
       ]
     },
     {
       category: "Professional Courses",
       courses: [
-        "CA Foundation",
-        "CA Intermediate",
-        "CMA Foundation", 
+        "CA Foundation Complete",
+        "CA Intermediate Group 1",
+        "CA Intermediate Group 2",
+        "CA Final",
+        "CMA Foundation Program",
         "CMA Intermediate",
-        "CS Foundation",
-        "CS Intermediate"
+        "CMA Final",
+        "CS Foundation Program",
+        "CS Executive Program",
+        "CS Professional",
+        "ACCA",
+        "CFA",
+        "Financial Management",
+        "Investment Analysis",
+        "Auditing & Assurance",
+        "Company Law & Secretarial Practice",
+        "Advanced Taxation",
+        "Financial Modeling",
+        "Excel for Finance",
+        "Tally & ERP"
       ]
     }
   ]

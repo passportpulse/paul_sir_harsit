@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import CourseCard from '../components/CourseCard'
+import CourseCard from '@/components/CourseCard'
 import { GraduationCap, Filter, Search, Star, Users, Clock, Award } from 'lucide-react'
 
 export default function CoursesPage() {
@@ -18,6 +18,29 @@ export default function CoursesPage() {
   const handleEnroll = (courseTitle: string) => {
     // Navigate to enroll page with course pre-selected
     window.location.href = `/enroll?course=${encodeURIComponent(courseTitle)}`
+  }
+
+  const handleViewDetails = (courseTitle: string, courseId: number) => {
+    // Navigate to specific course detail page
+    const slugMap: { [key: string]: string } = {
+      'ICSE Accounts & Economics': 'icse-accounts-economics',
+      'ISC Commerce Stream': 'isc-commerce-stream',
+      'CBSE Commerce Complete': 'cbse-commerce-complete',
+      'Higher Secondary Commerce': 'higher-secondary-commerce',
+      'B.Com Complete Program': 'bcom-complete-program',
+      'BBA Specialized Coaching': 'bba-specialized-coaching',
+      'MBA Executive Program': 'mba-executive-program',
+      'CA Foundation Complete': 'ca-foundation-complete',
+      'CA Intermediate Group 1': 'ca-intermediate-group-1',
+      'CA Intermediate Group 2': 'ca-intermediate-group-2',
+      'CMA Foundation Program': 'cma-foundation-program',
+      'CMA Intermediate': 'cma-intermediate',
+      'CS Foundation Program': 'cs-foundation-program',
+      'CS Executive Program': 'cs-executive-program'
+    }
+    
+    const slug = slugMap[courseTitle] || `course-${courseId}`
+    window.location.href = `/courses/${slug}`
   }
 
   const coursesData = [
@@ -350,7 +373,7 @@ export default function CoursesPage() {
           placeholder="Search for courses..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#0b1e6d] focus:outline-none shadow-sm"
+          className="w-full pl-12 pr-4 py-4 text-gray-500 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#0b1e6d] focus:outline-none shadow-sm"
         />
       </div>
 
@@ -404,7 +427,28 @@ export default function CoursesPage() {
                   features={course.features}
                   isPopular={course.isPopular}
                   courseId={course.id}
-                  onEnroll={() => handleEnroll(course.title)}
+                  onEnroll={handleEnroll}
+                  onViewDetails={() => {
+                const slugMap: { [key: string]: string } = {
+                  'ICSE Accounts & Economics': 'icse-accounts-economics',
+                  'ISC Commerce Stream': 'isc-commerce-stream',
+                  'CBSE Commerce Complete': 'cbse-commerce-complete',
+                  'Higher Secondary Commerce': 'higher-secondary-commerce',
+                  'B.Com Complete Program': 'bcom-complete-program',
+                  'BBA Specialized Coaching': 'bba-specialized-coaching',
+                  'MBA Executive Program': 'mba-executive-program',
+                  'CA Foundation Complete': 'ca-foundation-complete',
+                  'CA Intermediate Group 1': 'ca-intermediate-group-1',
+                  'CA Intermediate Group 2': 'ca-intermediate-group-2',
+                  'CMA Foundation Program': 'cma-foundation-program',
+                  'CMA Intermediate': 'cma-intermediate',
+                  'CS Foundation Program': 'cs-foundation-program',
+                  'CS Executive Program': 'cs-executive-program'
+                }
+                
+                const slug = slugMap[course.title] || `course-${course.id}`
+                window.location.href = `/courses/${slug}`
+              }}
                 />
               ))}
             </div>

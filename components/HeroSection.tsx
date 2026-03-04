@@ -5,15 +5,15 @@ import { Phone, Play, Users, Award, Star } from 'lucide-react'
 export default function HeroSection() {
   return (
     <section className="relative h-[80vh] bg-[#f8f6f2] overflow-hidden">
-      
+
       {/* GOLD ANIMATED DOTS */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-3 h-3 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse opacity-70"></div>
-        <div className="absolute top-40 left-60 w-2 h-2 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse opacity-60" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-72 left-32 w-4 h-4 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse opacity-80" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-40 right-40 w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full animate-pulse opacity-70" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute bottom-24 right-72 w-2 h-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full animate-pulse opacity-60" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute top-32 right-20 w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full animate-pulse opacity-70" style={{animationDelay: '2.5s'}}></div>
+        <div className="absolute top-40 left-60 w-2 h-2 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse opacity-60" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-72 left-32 w-4 h-4 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse opacity-80" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-40 right-40 w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full animate-pulse opacity-70" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-24 right-72 w-2 h-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full animate-pulse opacity-60" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-32 right-20 w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full animate-pulse opacity-70" style={{ animationDelay: '2.5s' }}></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto z-10 px-6 w-full h-full flex items-center">
@@ -21,28 +21,28 @@ export default function HeroSection() {
 
           {/* LEFT CONTENT */}
           <div className="space-y-8 py-16 lg:py-0">
-            
+
             <h1 className="text-5xl lg:text-6xl font-bold text-[#0f172a] leading-tight">
-              Let's Start Smart
+              PAUL SIR’S CLASSES
               <div className="relative inline-block mx-2">
                 <span className="text-yellow-500 border border-yellow-500 px-3 py-1 rounded rotate-45 relative z-10">Learning</span>
                 {/* 4 moving dots around the border */}
                 <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-border-move"></div>
-                <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-border-move" style={{animationDelay: '1s'}}></div>
-                <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-border-move" style={{animationDelay: '2s'}}></div>
-                <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-border-move" style={{animationDelay: '3s'}}></div>
+                <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-border-move" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-border-move" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute w-2 h-2 bg-yellow-400 rounded-full animate-border-move" style={{ animationDelay: '3s' }}></div>
               </div>
               Today
             </h1>
 
             <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-              Paul Sir’s Classes provides comprehensive commerce education 
-              with 25+ years of excellence. Learn Accounts, Economics, 
+              Paul Sir’s Classes provides comprehensive commerce education
+              with 25+ years of excellence. Learn Accounts, Economics,
               Taxation & Business Studies from expert faculty.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
+              <button
                 onClick={() => window.open('tel:9007019442', '_self')}
                 className="bg-yellow-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-yellow-600 transition-all duration-300 shadow-lg flex items-center gap-3"
               >
@@ -56,7 +56,7 @@ export default function HeroSection() {
               </button>
             </div>
 
-         
+
 
           </div>
 
@@ -86,7 +86,7 @@ export default function HeroSection() {
             </div>
 
             {/* Floating Card 2 - Middle Right */}
-            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-2xl shadow-xl p-4 animate-bounce" style={{animationDelay: '0.5s'}}>
+            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-2xl shadow-xl p-4 animate-bounce" style={{ animationDelay: '0.5s' }}>
               <div className="flex items-center gap-3">
                 <div className="bg-blue-100 p-3 rounded-xl">
                   <Users className="text-blue-500" size={18} />
@@ -99,7 +99,7 @@ export default function HeroSection() {
             </div>
 
             {/* Instructor Card - Bottom */}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white rounded-2xl shadow-xl p-4 animate-bounce" style={{animationDelay: '1s'}}>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white rounded-2xl shadow-xl p-4 animate-bounce" style={{ animationDelay: '1s' }}>
               <div className="flex items-center gap-3">
                 <Award size={18} />
                 <div>
@@ -119,8 +119,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      
-    {/* CUSTOM ANIMATION STYLES */}
+
+      {/* CUSTOM ANIMATION STYLES */}
       <style jsx>{`
         @keyframes moveAroundBorder {
           0% { top: -4px; left: -4px; }

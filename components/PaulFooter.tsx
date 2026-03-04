@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Facebook, Instagram, MessageCircle } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Instagram, MessageCircle, Youtube } from 'lucide-react'
 
 export default function PaulFooter() {
   return (
@@ -24,16 +24,24 @@ export default function PaulFooter() {
               <h4 className="text-sm font-medium text-gray-300 mb-3">Follow Us</h4>
               <div className="flex space-x-3">
                 <a 
-                  href="#" 
+                  href="https://www.facebook.com/p/PAUL-SIRS-Classes-100063791295937/" 
                   className="w-10 h-10 bg-white  bg-opacity-10 text-[#0b1e6d]  hover:bg-[#f5c542] hover:text-[#0b1e6d] rounded-full flex items-center justify-center transition-all duration-200 group"
                 >
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.instagram.com/paul_sirs_classes/" 
                   className="w-10 h-10 bg-white bg-opacity-10 text-[#0b1e6d] hover:bg-[#f5c542] hover:text-[#0b1e6d] rounded-full flex items-center justify-center transition-all duration-200 group"
                 >
                   <Instagram className="h-5 w-5" />
+                </a>
+                <a 
+                  href="https://youtube.com/@paulsirscommerceclasses?si=pmCsX137nfn7jWzJ" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white text-[#0b1e6d] bg-opacity-10 hover:bg-[#f5c542] hover:text-[#0b1e6d] rounded-full flex items-center justify-center transition-all duration-200 group"
+                >
+                  <Youtube className="h-5 w-5" />
                 </a>
                 <a 
                   href="https://wa.me/9830275787" 
@@ -264,8 +272,24 @@ export default function PaulFooter() {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#f5c542] transition-all duration-200 group-hover:w-full"></span>
                 </Link>
               </li>
-         
-       
+              <li>
+                <Link 
+                  href="/gallery" 
+                  className="text-gray-400 hover:text-[#f5c542] transition-colors duration-200 text-sm relative group py-1 inline-block"
+                >
+                  Gallery
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#f5c542] transition-all duration-200 group-hover:w-full"></span>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/feedback" 
+                  className="text-gray-400 hover:text-[#f5c542] transition-colors duration-200 text-sm relative group py-1 inline-block"
+                >
+                  Feedback
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#f5c542] transition-all duration-200 group-hover:w-full"></span>
+                </Link>
+              </li>
               <li>
                 <Link 
                   href="/contact" 

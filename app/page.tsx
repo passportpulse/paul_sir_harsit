@@ -3,13 +3,18 @@
 import { Phone, Mail, MapPin, BookOpen, GraduationCap, Star, Award } from 'lucide-react'
 import AboutSection from '@/components/AboutSection'
 import HeroSection from '@/components/HeroSection'
+import NoticeBoard from '@/components/NoticeBoard'
 
 export default function HomePage() {
   return (
     <div className="bg-white text-gray-800">
 
+
       {/* ================= HERO SECTION ================= */}
       <HeroSection />
+
+      {/* ================= NOTICE BOARD ================= */}
+      <NoticeBoard />
 
       {/* ================= ONLINE LEARNING CENTER SECTION ================= */}
       <AboutSection />

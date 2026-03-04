@@ -53,9 +53,9 @@ export default function ContactPage() {
             <img src="/logo-soc.png" alt="" />
           </div>
 
-     <div className="absolute bottom-0 left-0 right-0 h-12 bg-white transform translate-y-1/2 rotate-180"><svg className="h-full w-full text-yellow-500" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,0 Z" fill="currentColor"></path></svg></div>
+          <div className="absolute bottom-0 left-0 right-0 h-12 bg-white transform translate-y-1/2 rotate-180"><svg className="h-full w-full text-yellow-500" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,0 Z" fill="currentColor"></path></svg></div>
         </div>
-   
+
       </section>
 
 
@@ -88,26 +88,68 @@ export default function ContactPage() {
                   <h3 className="text-2xl font-bold text-gray-800 mb-4">
                     Our Locations
                   </h3>
-                  <div className="space-y-3 text-gray-600">
-                    <div>
-                      <p className="font-semibold text-gray-800">
-                        35B, South Sinthee Road
-                      </p>
-                      <p>Kolkata – 700050</p>
-                      <p className="text-sm text-gray-500">
-                        (Near Dumdum Station)
-                      </p>
+                  <div className="flex flex-col md:flex-row gap-4 items-stretch">
+
+                    {/* MAIN BRANCH */}
+                    <div className="flex-1 p-4 bg-[#f5c542]/10 rounded-xl h-full">
+                      <h4 className="font-bold text-[#0b1e6d] mb-3 flex items-center gap-2">
+                        <span className="bg-[#f5c542] text-white text-xs px-2 py-1 rounded">
+                          MAIN BRANCH
+                        </span>
+                      </h4>
+
+                      <div className="space-y-2 text-gray-700 flex flex-col justify-between h-full">
+                        <div>
+                          <p className="font-semibold">35B, South Sinthee Road</p>
+                          <p>Kolkata – 700050</p>
+                          <p className="text-sm text-gray-500">(Near Dumdum Station)</p>
+                        </div>
+
+                        <button
+                          onClick={() =>
+                            window.open(
+                              "https://www.google.com/maps/search/?api=1&query=35B+South+Sinthee+Road+Kolkata+700050",
+                              "_blank"
+                            )
+                          }
+                          className="mt-4 text-[#0b1e6d] hover:text-[#f5c542] text-sm font-medium flex items-center gap-1 transition-colors"
+                        >
+                          <MapPin className="w-4 h-4" />
+                          View on Google Maps
+                        </button>
+                      </div>
                     </div>
 
-                    <div className="pt-4 border-t border-gray-200">
-                      <p className="font-semibold text-gray-800">
-                        148, Ramdulal Sarkar Street
-                      </p>
-                      <p>Hedua, Kolkata – 700006</p>
-                      <p className="text-sm text-gray-500">
-                        (Near Girish Park Metro)
-                      </p>
+                    {/* OTHER BRANCH */}
+                    <div className="flex-1 p-4 bg-gray-50 rounded-xl h-full">
+                      <h4 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                        <span className="bg-gray-600 text-white text-xs px-2 py-1 rounded">
+                          OTHER BRANCH
+                        </span>
+                      </h4>
+
+                      <div className="space-y-2 text-gray-700 flex flex-col justify-between h-full">
+                        <div>
+                          <p className="font-semibold">148, Ramdulal Sarkar Street</p>
+                          <p>Hedua, Kolkata – 700006</p>
+                          <p className="text-sm text-gray-500">(Near Girish Park Metro)</p>
+                        </div>
+
+                        <button
+                          onClick={() =>
+                            window.open(
+                              "https://www.google.com/maps/search/?api=1&query=148+Ramdulal+Sarkar+Street+Hedua+Kolkata+700006",
+                              "_blank"
+                            )
+                          }
+                          className="mt-4 text-[#0b1e6d] hover:text-[#f5c542] text-sm font-medium flex items-center gap-1 transition-colors"
+                        >
+                          <MapPin className="w-4 h-4" />
+                          View on Google Maps
+                        </button>
+                      </div>
                     </div>
+
                   </div>
                 </div>
               </div>
@@ -167,16 +209,69 @@ export default function ContactPage() {
                   className="w-full text-gray-500 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f5c542] focus:border-transparent outline-none"
                 >
                   <option value="">Select Course</option>
-                  <option>ICSE</option>
-                  <option>ISC</option>
-                  <option>CBSE</option>
-                  <option>H.S</option>
-                  <option>B.Com</option>
-                  <option>BBA</option>
-                  <option>MBA</option>
-                  <option>CA</option>
-                  <option>CMA</option>
-                  <option>CS</option>
+                  
+                  {/* School Level Courses */}
+                  <optgroup label="📚 School Level Courses">
+                    <option>ICSE Commerce (Class 9-10)</option>
+                    <option>ISC Commerce (Class 11-12)</option>
+                    <option>CBSE Commerce (Class 11-12)</option>
+                    <option>Higher Secondary (WB Board)</option>
+                    <option>Accounts & Economics</option>
+                    <option>Business Studies</option>
+                    <option>Commercial Applications</option>
+                  </optgroup>
+                  
+                  {/* Undergraduate Courses */}
+                  <optgroup label="🎓 Undergraduate Courses">
+                    <option>B.Com Honours (Semester 1-6)</option>
+                    <option>B.Com General (Semester 1-6)</option>
+                    <option>BBA (All Years)</option>
+                    <option>MBA (All Semesters)</option>
+                    <option>Financial Accounting</option>
+                    <option>Cost & Management Accounting</option>
+                    <option>Corporate Accounting</option>
+                    <option>Direct Taxation</option>
+                    <option>Indirect Taxation</option>
+                    <option>Business Law</option>
+                    <option>Economics</option>
+                  </optgroup>
+                  
+                  {/* Professional Courses */}
+                  <optgroup label="💼 Professional Courses">
+                    <option>CA Foundation</option>
+                    <option>CA Intermediate</option>
+                    <option>CA Final</option>
+                    <option>CMA Foundation</option>
+                    <option>CMA Intermediate</option>
+                    <option>CMA Final</option>
+                    <option>CS Foundation</option>
+                    <option>CS Executive</option>
+                    <option>CS Professional</option>
+                    <option>ACCA</option>
+                    <option>CFA</option>
+                  </optgroup>
+                  
+                  {/* Specialized Courses */}
+                  <optgroup label="🎯 Specialized Courses">
+                    <option>Financial Management</option>
+                    <option>Investment Analysis</option>
+                    <option>Auditing & Assurance</option>
+                    <option>Company Law & Secretarial Practice</option>
+                    <option>Advanced Taxation</option>
+                    <option>Financial Modeling</option>
+                    <option>Excel for Finance</option>
+                    <option>Tally & ERP</option>
+                  </optgroup>
+                  
+                  {/* Exam Preparation */}
+                  <optgroup label="📝 Exam Preparation">
+                    <option>Board Exam Preparation</option>
+                    <option>University Exam Preparation</option>
+                    <option>Competitive Exam Preparation</option>
+                    <option>Crash Course</option>
+                    <option>Doubt Clearing Sessions</option>
+                    <option>Mock Test Series</option>
+                  </optgroup>
                 </select>
               </div>
             </div>
@@ -217,16 +312,49 @@ export default function ContactPage() {
           </div>
 
           {/* ===== MAP + INFO ===== */}
-          <div className="space-y-10">
+          <div className="space-y-10 flex-1">
+            <div className="flex flex-row gap-4">
+              {/* MAIN BRANCH MAP */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-700 mb-3">Main Branch - Dumdum</h3>
+                <div className="rounded-2xl overflow-hidden shadow-lg border">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5370.8535866701395!2d88.39183949999999!3d22.6212867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89df078c7ae81%3A0x5e15ac966f93eb6a!2s35b%2C%20S%20Sinthee%20Rd%2C%20Pearabagan%2C%20South%20Sinthee%2C%20Biswanath%20Colony%2C%20Sinthee%2C%20Kolkata%2C%20West%20Bengal%20700030!5e1!3m2!1sen!2sin!4v1772600972967!5m2!1sen!2sin"
+                    className="w-full h-72"
+                    loading="lazy"
+                    allowFullScreen
+                  ></iframe>
+                </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-lg border">
-              <iframe
-                src="https://www.google.com/maps?q=South+Sinthee+Road+Kolkata&output=embed"
-                className="w-full h-72"
-                loading="lazy"
-              ></iframe>
+                <button
+                  onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=35B+South+Sinthee+Road+Kolkata+700050', '_blank')}
+                  className="mt-2 text-[#0b1e6d] hover:text-[#f5c542] text-sm font-medium flex items-center gap-1 transition-colors"
+                >
+                  <MapPin className="w-4 h-4" />
+                  Get Directions to Main Branch
+                </button>
+              </div>
+
+              {/* OTHER BRANCH MAP */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-700 mb-3">Other Branch - Hedua</h3>
+                <div className="rounded-2xl overflow-hidden shadow-lg border">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5372.123286849975!2d88.36564829999999!3d22.588758700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0276359bb70ad3%3A0x7bc0d0b687415290!2s148%2C%20Ramdulal%20Sarkar%20St%2C%20Manicktala%2C%20Hedua%2C%20Kolkata%2C%20West%20Bengal%20700006!5e1!3m2!1sen!2sin!4v1772600950918!5m2!1sen!2sin"
+                    className="w-full h-72"
+                    loading="lazy"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <button
+                  onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=148+Ramdulal+Sarkar+Street+Hedua+Kolkata+700006', '_blank')}
+                  className="mt-2 text-[#0b1e6d] hover:text-[#f5c542] text-sm font-medium flex items-center gap-1 transition-colors"
+                >
+                  <MapPin className="w-4 h-4" />
+                  Get Directions to Other Branch
+                </button>
+              </div>
             </div>
-
             <div className="bg-slate-50 p-8 rounded-2xl shadow-md border">
               <h3 className="text-xl font-bold text-gray-700 mb-4">Office Hours</h3>
               <div className="space-y-3 text-gray-800">
