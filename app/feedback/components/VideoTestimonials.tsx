@@ -23,9 +23,17 @@ export default function VideoTestimonials({ videos, selectedVideo, onVideoSelect
               >
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                   {/* Video Thumbnail */}
-                  <div className="relative h-48 bg-gradient-to-br from-[#0b1e6d] to-[#1a2f7d] flex items-center justify-center">
-                    <Video className="w-12 h-12 text-white/50" />
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
+                  <div className="relative h-48 bg-white">
+                    <video 
+                      src={video.thumbnail} 
+                      className="w-full h-full object-cover"
+                      muted
+                      loop
+                      playsInline
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                      <Play className="w-12 h-12 text-white/80" />
+                    </div>
                     
                     {/* Duration Badge */}
                     <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
@@ -73,14 +81,15 @@ export default function VideoTestimonials({ videos, selectedVideo, onVideoSelect
             
             {/* Modal Content */}
             <div className="bg-white rounded-xl overflow-hidden">
-              {/* Video Player Placeholder */}
-              <div className="relative h-96 bg-gradient-to-br from-[#0b1e6d] to-[#1a2f7d] flex items-center justify-center">
-                <Video className="w-16 h-16 text-white/50" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/90 rounded-full p-4 transform scale-0 group-hover:scale-100 transition-transform duration-300">
-                    <Play className="w-8 h-8 text-[#0b1e6d]" />
-                  </div>
-                </div>
+              {/* Video Player */}
+              <div className="relative h-96 bg-black">
+                <video 
+                  src={selectedVideo.thumbnail} 
+                  className="w-full h-full"
+                  controls
+                  autoPlay
+                  playsInline
+                />
               </div>
               
               {/* Video Details */}

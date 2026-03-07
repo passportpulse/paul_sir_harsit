@@ -51,3 +51,50 @@ body {
 .mobileLink {
   @apply block text-white hover:text-[#f5c542] font-medium py-2 transition;
 }
+
+@keyframes logoScale {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-logo {
+  animation: logoScale 1s ease forwards;
+}
+
+.animate-title {
+  animation: slideUp 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.animate-slogan {
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}

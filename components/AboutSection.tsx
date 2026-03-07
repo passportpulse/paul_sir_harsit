@@ -8,7 +8,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ====== TOP CONTENT ====== */}
-        <div className="grid lg:grid-cols-2 gap-20 items-center mb-24">
+        <div className="grid lg:grid-cols-2 gap-20 items-center ">
 
           {/* LEFT CONTENT */}
           <div>
@@ -68,7 +68,7 @@ export default function AboutSection() {
         </div>
 
         {/* ====== COURSE CATEGORY CARDS ====== */}
-        <div>
+        {/* <div>
 
           <h3 className="text-3xl font-bold text-[#0f172a] mb-12">
             Our Academic Programs
@@ -99,7 +99,7 @@ export default function AboutSection() {
 
           </div>
 
-        </div>
+        </div> */}
 
       </div>
     </section>

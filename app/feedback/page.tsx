@@ -71,49 +71,14 @@ export default function FeedbackPage() {
   const videos = [
     {
       id: 1,
-      title: "Success Story - Ritika Sharma (95% in ISC)",
-      description: "Hear how Ritika achieved outstanding results in ISC Commerce with Paul Sir's guidance",
-      thumbnail: "/feedback-video-1.jpg",
-      duration: "4:32",
-      studentName: "Ritika Sharma",
+      title: "Success Story -  (95% in ISC)",
+      description: "Hear how  achieved outstanding results in ISC Commerce with Paul Sir's guidance",
+      thumbnail: "/feedback/feedback1.mp4",
+      duration: "",
+      studentName: "",
       course: "ISC Commerce"
     },
-    {
-      id: 2,
-      title: "CA Foundation Topper - Arjun Mehta",
-      description: "Arjun shares his experience of clearing CA Foundation in first attempt",
-      thumbnail: "/feedback-video-2.jpg",
-      duration: "6:18",
-      studentName: "Arjun Mehta",
-      course: "CA Foundation"
-    },
-    {
-      id: 3,
-      title: "B.Com Success Journey - Sneha Agarwal",
-      description: "Sneha talks about her academic improvement and college success",
-      thumbnail: "/feedback-video-3.jpg",
-      duration: "5:45",
-      studentName: "Sneha Agarwal",
-      course: "B.Com"
-    },
-    {
-      id: 4,
-      title: "Working Professional - Rohit Kumar",
-      description: "Rohit shares how weekend batches helped him balance work and studies",
-      thumbnail: "/feedback-video-4.jpg",
-      duration: "7:20",
-      studentName: "Rohit Kumar",
-      course: "CMA Intermediate"
-    },
-    {
-      id: 5,
-      title: "CBSE Topper - Priya Singh",
-      description: "Priya's journey from 70% to 92% with dedicated coaching",
-      thumbnail: "/feedback-video-5.jpg",
-      duration: "5:15",
-      studentName: "Priya Singh",
-      course: "CBSE Commerce"
-    }
+   
   ]
 
   const openVideoModal = (video: typeof videos[0]) => {

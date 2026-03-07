@@ -174,29 +174,41 @@ export default function PaulFooter() {
             
             <div className="space-y-4">
               {/* Main Address */}
-              <div className="space-y-2">
-                <h4 className="text-sm font-medium text-gray-300">Main Address</h4>
-                <div className="flex items-start space-x-2">
-                  <MapPin className="h-4 w-4 text-[#f5c542] mt-0.5 flex-shrink-0" />
-                  <div className="text-gray-400 text-sm">
-                    <p>35B, South Sinthee Road,</p>
-                    <p>Kolkata – 700050</p>
-                    <p className="text-xs text-gray-500">(Near Dumdum Station)</p>
-                  </div>
-                </div>
-              </div>
+    <div className="space-y-2">
+  <h4 className="text-sm font-medium text-gray-300">Main Address</h4>
+
+  <a
+    href="https://maps.app.goo.gl/Q5C1JLrMGMvXAZYm7?g_st=aw"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-start space-x-2 hover:text-white transition"
+  >
+    <MapPin className="h-4 w-4 text-[#f5c542] mt-0.5 flex-shrink-0" />
+
+    <div className="text-gray-400 text-sm">
+      <p>35B, South Sinthee Road,</p>
+      <p>Kolkata – 700050</p>
+      <p className="text-xs text-gray-500">(Near Dumdum Station)</p>
+    </div>
+  </a>
+</div>
               
               {/* Branch Address */}
               <div className="space-y-2">
                 <h4 className="text-sm font-medium text-gray-300">Branch Address</h4>
-                <div className="flex items-start space-x-2">
+                 <a
+    href="https://maps.app.goo.gl/JYbfwpZQHhH7o7DL7?g_st=aw"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-start space-x-2 hover:text-white transition"
+  >
                   <MapPin className="h-4 w-4 text-[#f5c542] mt-0.5 flex-shrink-0" />
                   <div className="text-gray-400 text-sm">
                     <p>148, Ramdulal Sarkar Street,</p>
                     <p>Hedua, Kolkata – 700006</p>
                     <p className="text-xs text-gray-500">(Near Girish Park Metro)</p>
                   </div>
-                </div>
+                </a>
               </div>
               
               {/* Phone Numbers */}

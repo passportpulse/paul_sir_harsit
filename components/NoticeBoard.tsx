@@ -70,12 +70,12 @@ export default function NoticeBoard() {
     { id: 'schedule', label: 'Schedule', icon: <Clock className="w-4 h-4" /> }
   ]
 
-  const filteredNotices = activeTab === 'all' 
-    ? notices 
+  const filteredNotices = activeTab === 'all'
+    ? notices
     : notices.filter(notice => notice.type === activeTab)
 
   const getPriorityColor = (priority: string) => {
-    switch(priority) {
+    switch (priority) {
       case 'high': return 'bg-red-100 text-red-600 border-red-200'
       case 'medium': return 'bg-yellow-100 text-yellow-600 border-yellow-200'
       case 'low': return 'bg-green-100 text-green-600 border-green-200'
@@ -85,41 +85,45 @@ export default function NoticeBoard() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
-    return date.toLocaleDateString('en-IN', { 
-      day: 'numeric', 
-      month: 'short', 
-      year: 'numeric' 
+    return date.toLocaleDateString('en-IN', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
     })
   }
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-[#f8f9fb]">
       <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center mb-4">
-            <div className="bg-[#f5c542] text-[#0b1e6d] p-3 rounded-full mr-3">
-              <Bell className="w-6 h-6" />
+        <div className='flex justify-between items-center'>
+          {/* Section Header */}
+          <div className="mb-12">
+            <div className="flex  mb-4">
+              <div className="bg-[#f5c542] text-[#0b1e6d] p-3 rounded-full mr-3">
+                <Bell className="w-6 h-6" />
+              </div>
+              <h2 className="text-4xl font-bold text-[#0b1e6d]">Notice Board</h2>
             </div>
-            <h2 className="text-4xl font-bold text-[#0b1e6d]">Notice Board</h2>
+            <p className="text-gray-600 text-lg mt-2">
+              Stay updated with latest announcements, exam schedules, and important notifications
+            </p>
           </div>
-          <p className="text-gray-600 text-lg mt-2">
-            Stay updated with latest announcements, exam schedules, and important notifications
-          </p>
+          <div className="text-center mb-12">
+            <button className="bg-[#0b1e6d] hover:bg-[#f5c542] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg">
+              View All Notices
+            </button>
+          </div>
         </div>
-
         {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex flex-wrap  gap-2 mb-8">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                activeTab === tab.id
+              className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${activeTab === tab.id
                   ? 'bg-[#0b1e6d] text-white shadow-lg'
                   : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-              }`}
+                }`}
             >
               {tab.icon}
               <span>{tab.label}</span>
@@ -171,12 +175,8 @@ export default function NoticeBoard() {
           ))}
         </div>
 
-        {/* View More Button */}
-        <div className="text-center mt-12">
-          <button className="bg-[#0b1e6d] hover:bg-[#f5c542] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg">
-            View All Notices
-          </button>
-        </div>
+
+
 
         {/* Quick Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">

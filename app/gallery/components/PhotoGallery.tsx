@@ -22,19 +22,23 @@ export default function PhotoGallery({ images, onImageClick }: PhotoGalleryProps
               <div
                 key={image.id}
                 onClick={() => onImageClick(image)}
-                className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                className="group relative overflow-hidden rounded-xl cursor-pointer transform transition-all duration-300 hover:scale-105 "
               >
-                {/* Placeholder Image */}
-                <div className="relative h-64 bg-gradient-to-br from-[#0b1e6d] to-[#1a2f7d] flex items-center justify-center">
-                  <Camera className="w-12 h-12 text-white/50" />
+                {/* Actual Image */}
+                <div className="relative h-64 bg-white">
+                  <img 
+                    src={image.src} 
+                    alt={image.title}
+                    className="w-full h-full object-contain"
+                  />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                 </div>
 
-                {/* Image Info Overlay */}
+                {/* Image Info Overlay
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <h3 className="text-white font-semibold text-sm">{image.title}</h3>
                   <p className="text-gray-300 text-xs mt-1">{image.description}</p>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>

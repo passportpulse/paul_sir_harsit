@@ -29,57 +29,232 @@ export default function GalleryPage() {
       category: 'classroom',
       title: 'CA Foundation Classroom',
       description: 'Interactive session with CA Foundation students',
-      src: '/classroom-1.jpg'
+      src: '/gallery/1.jpeg'
     },
     {
       id: 2,
       category: 'events',
       title: 'Annual Function 2024',
       description: 'Students receiving excellence awards',
-      src: '/event-1.jpg'
+      src: '/gallery/2.jpeg'
     },
     {
       id: 3,
       category: 'achievements',
       title: 'Top Performers',
       description: 'Students scoring 90%+ in board exams',
-      src: '/achievement-1.jpg'
+      src: '/gallery/3.jpeg'
     },
     {
       id: 4,
       category: 'students',
       title: 'Study Group Session',
       description: 'Collaborative learning environment',
-      src: '/students-1.jpg'
+      src: '/gallery/4.jpeg'
     },
     {
       id: 5,
       category: 'classroom',
       title: 'B.Com Advanced Class',
       description: 'Financial accounting practical session',
-      src: '/classroom-2.jpg'
+      src: '/gallery/5.jpeg'
     },
     {
       id: 6,
       category: 'events',
       title: 'Workshop on GST',
       description: 'Special taxation workshop for professionals',
-      src: '/event-2.jpg'
+      src: '/gallery/6.jpeg'
     },
     {
       id: 7,
       category: 'achievements',
       title: 'CA Inter Toppers',
       description: 'Congratulations to our CA Inter rank holders',
-      src: '/achievement-2.jpg'
+      src: '/gallery/7.jpeg'
     },
     {
       id: 8,
       category: 'students',
       title: 'Doubt Clearing Session',
       description: 'Personalized attention to every student',
-      src: '/students-2.jpg'
-    }
+      src: '/gallery/8.jpeg'
+    },
+    {
+      id: 9,
+      category: 'classroom',
+      title: 'CA Final Classroom',
+      description: 'Interactive session with CA Final students',
+      src: '/gallery/9.jpeg'
+    },
+    {
+      id: 10,
+      category: 'events',
+      title: 'CA Final Exam Preparation',
+      description: 'Last-minute revision tips for CA Final students',
+      src: '/gallery/10.jpeg'
+    },
+    {
+  id: 11,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/11.jpeg'
+},
+{
+  id: 12,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/12.jpeg'
+},
+{
+  id: 13,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/13.jpeg'
+},
+{
+  id: 14,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/14.jpeg'
+},
+{
+  id: 15,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/15.jpeg'
+},
+{
+  id: 16,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/16.jpeg'
+},
+{
+  id: 17,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/17.jpeg'
+},
+{
+  id: 18,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/18.jpeg'
+},
+{
+  id: 19,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/19.jpeg'
+},
+{
+  id: 20,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/20.jpeg'
+},
+{
+  id: 21,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/21.jpeg'
+},
+{
+  id: 22,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/22.jpeg'
+},
+{
+  id: 23,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/23.jpeg'
+},
+{
+  id: 24,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/24.jpeg'
+},
+{
+  id: 25,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/25.jpeg'
+},
+{
+  id: 26,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/26.jpeg'
+},
+{
+  id: 27,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/27.jpeg'
+},
+{
+  id: 28,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/28.jpeg'
+},
+{
+  id: 29,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/29.jpeg'
+},
+{
+  id: 30,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/30.jpeg'
+},
+{
+  id: 31,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/31.jpeg'
+},
+{
+  id: 32,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/32.jpeg'
+},
+{
+  id: 33,
+  category: 'events',
+  title: 'CA Final Exam Preparation',
+  description: 'Last-minute revision tips for CA Final students',
+  src: '/gallery/33.jpeg'
+}
   ]
 
   const videos = [
@@ -133,6 +308,7 @@ export default function GalleryPage() {
     }
   ]
 
+
   const filteredImages = activeCategory === 'all'
     ? galleryImages
     : galleryImages.filter(img => img.category === activeCategory)
@@ -153,29 +329,29 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <GalleryHero />
-      <GalleryTabs 
+      <GalleryTabs
         activeTab={activeTab}
         onTabChange={setActiveTab}
         activeCategory={activeCategory}
         categories={categories}
         onCategoryChange={setActiveCategory}
       />
-      
+
       {activeTab === 'photos' && (
-        <PhotoGallery 
+        <PhotoGallery
           images={filteredImages}
           onImageClick={openImageModal}
         />
       )}
-      
+
       {activeTab === 'videos' && (
-        <VideoGallery 
+        <VideoGallery
           videos={videos}
           onVideoClick={openVideoModal}
         />
       )}
 
-      <GalleryModals 
+      <GalleryModals
         selectedImage={selectedImage}
         selectedVideo={selectedVideo}
         onCloseModal={closeModal}
