@@ -8,7 +8,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ====== TOP CONTENT ====== */}
-        <div className="grid lg:grid-cols-2 gap-20 items-center ">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
 
           {/* LEFT CONTENT */}
           <div>
@@ -23,10 +23,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-gray-600 leading-relaxed mb-8">
-              With over 25 years of excellence in commerce teaching, Paul Sir 
-              specializes in Accounts, Economics, Taxation, and Business Studies. 
-              Our structured approach focuses on concept clarity, exam strategy, 
-              and practical financial understanding.
+           Paul Sir’s Commerce Classes is one of the most trusted destinations for Commerce coaching in Kolkata, helping students achieve excellence in Accounts, Economics, Business Studies, Costing and Taxation Financial management . With over 25 years of teaching experience, Paul Sir has guided more than 5,000 students toward strong academic results and career success. Our classes focus on concept clarity, exam-oriented preparation, problem-solving skills, and practical understanding of commerce subjects. Through structured lessons, regular tests, and personal attention, students gain the confidence to perform well in school examinations and higher studies in commerce. If you are looking for the best commerce coaching for Accounts, Economics, Business Studies, Costing and Taxation, Financial management in Kolkata, Paul Sir’s Commerce Classes is the right place to start your journey toward academic excellence and a successful future.
             </p>
 
             {/* STATS GRID */}
@@ -46,7 +43,7 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative">
+     <div className="sticky top-24">
 
             {/* Soft Background Frame */}
             <div className="absolute -top-6 -right-6 w-full h-full bg-orange-100 rounded-3xl"></div>

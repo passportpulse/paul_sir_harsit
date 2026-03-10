@@ -14,58 +14,42 @@ export default function FeedbackPage() {
   const writtenFeedback = [
     {
       id: 1,
-      name: "Ritika Sharma",
+      name: "Manjima Mukherjee",
       course: "ISC Commerce",
       rating: 5,
-      date: "2024-02-15",
-      feedback: "Paul Sir's teaching methodology is exceptional. His way of explaining complex accounting concepts with real-life examples made everything so easy to understand. The structured notes and regular practice tests helped me score 95% in my board exams. Highly recommended!",
+      date: "3 weeks ago",
+      feedback: "He is best teacher you can ever have... I'm studying under his guidance for a long time he is genuinely very helpful and his teaching techniques are very unique and innovative..you should must give it a try.",
       avatar: "RS"
     },
     {
       id: 2,
-      name: "Arjun Mehta",
-      course: "B.Com Semester 3",
-      rating: 5,
-      date: "2024-01-28",
-      feedback: "I was struggling with Financial Accounting until I joined Paul Sir's classes. The personalized attention and doubt-clearing sessions made all the difference. Sir's industry experience adds practical value to theoretical concepts. Best commerce faculty in Kolkata!",
-      avatar: "AM"
+      name: "NINJA GMR FF",
+      course: "CMA Intermediate",
+      rating: 4,
+      date: "3 weeks ago",
+      feedback: "Sir is too good. His concept is very unique and usefull for us....",
+      avatar: "NG"
     },
     {
       id: 3,
-      name: "Sneha Agarwal",
+      name: "Arin Sarkar",
       course: "CA Foundation",
       rating: 5,
-      date: "2024-02-10",
-      feedback: "The comprehensive study material and exam-oriented approach at Paul Sir's Classes is unmatched. Regular mock tests and performance analysis helped me identify my weak areas and improve. Successfully cleared CA Foundation in first attempt!",
-      avatar: "SA"
+      date: "49 weeks ago",
+      feedback: "This tuition was too much effective that it made accountancy interesting for me and the sir is friendly and thus teach with having Little funs which engage the students more into the studies.",
+      avatar: "AS"
     },
+
     {
       id: 4,
-      name: "Rohit Kumar",
-      course: "CMA Intermediate",
-      rating: 4,
-      date: "2024-01-15",
-      feedback: "Excellent coaching for CMA Intermediate. The weekend batches are perfect for working professionals like me. Sir's conceptual clarity and practical examples make cost accounting and financial management easy to grasp.",
-      avatar: "RK"
-    },
-    {
-      id: 5,
-      name: "Priya Singh",
-      course: "CBSE Commerce",
+      name: "Working Giants",
+      course: "B.Com Semester 3",
       rating: 5,
-      date: "2024-02-20",
-      feedback: "Paul Sir's classes transformed my approach towards studies. The regular tests, detailed feedback, and motivation helped me improve from 70% to 92% in just 6 months. Thank you Sir for your guidance and support!",
-      avatar: "PS"
+      date: "49 weeks ago",
+      feedback: "Paul Sir’s coaching class is an excellent place for students seeking in-depth understanding and academic success. His teaching methods are clear, structured, and engaging, making even complex topics easy to grasp. He is highly knowledgeable, patient, and always ready to clear doubts, ensuring every student gets personal attention. The study materials provided are well-organized and immensely helpful for exam preparation. His dedication and passion for teaching create a motivating learning environment. Students not only gain subject knowledge but also develop confidence in their abilities. Highly recommended for anyone looking for quality coaching and academic excellence!",
+      avatar: "AM"
     },
-    {
-      id: 6,
-      name: "Vikram Choudhary",
-      course: "CS Executive",
-      rating: 5,
-      date: "2024-01-08",
-      feedback: "Professional and structured coaching for CS Executive program. The study material is comprehensive and covers all latest amendments. Sir's insights into company law and corporate governance are invaluable. Cleared both modules with distinction!",
-      avatar: "VC"
-    }
+
   ]
 
   const videos = [
@@ -78,7 +62,7 @@ export default function FeedbackPage() {
       studentName: "",
       course: "ISC Commerce"
     },
-   
+
   ]
 
   const openVideoModal = (video: typeof videos[0]) => {
@@ -102,13 +86,13 @@ export default function FeedbackPage() {
     <div className="min-h-screen bg-gray-50">
       <FeedbackHero />
       <FeedbackTabs activeTab={activeTab} onTabChange={setActiveTab} />
-      
+
       {activeTab === 'written' && (
         <WrittenFeedback feedback={writtenFeedback} />
       )}
-      
+
       {activeTab === 'videos' && (
-        <VideoTestimonials 
+        <VideoTestimonials
           videos={videos}
           selectedVideo={selectedVideo}
           onVideoSelect={openVideoModal}

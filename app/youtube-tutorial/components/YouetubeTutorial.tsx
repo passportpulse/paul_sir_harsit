@@ -1,16 +1,16 @@
 "use client"
 import { useState } from 'react'
-import { 
-  Youtube, 
-  Upload, 
-  PlayCircle, 
-  Settings, 
-  FolderOpen, 
-  Link2, 
-  Eye, 
-  Clock, 
-  CheckCircle, 
-  AlertCircle, 
+import {
+  Youtube,
+  Upload,
+  PlayCircle,
+  Settings,
+  FolderOpen,
+  Link2,
+  Eye,
+  Clock,
+  CheckCircle,
+  AlertCircle,
   ArrowRight,
   Copy,
   Monitor,
@@ -70,12 +70,20 @@ export default function YouetubeTutorial() {
       description: "Track performance and manage content"
     }
   ]
-
+const videos = [
+  { id: "C8O84gHnucA" },
+  { id: "rYjHH71s3Os" },
+  { id: "ZE8X5hKqhes" },
+  { id: "-pLBSZmu1gM" },
+  { id: "bB3lZoShOhc" },
+  { id: "zIQeKoeCysY" },
+  { id: "P02-ffBM9VI" }
+];
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
 
-       <section className="relative h-[40vh] flex items-center justify-center text-center text-white"
+      <section className="relative h-[40vh] flex items-center justify-center text-center text-white"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b')",
           backgroundSize: "cover",
@@ -84,82 +92,101 @@ export default function YouetubeTutorial() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b1e6d]/90 to-[#1e3a8a]/85"></div>
 
-       <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center">
             <div className="flex justify-center mb-6">
               <div className="bg-[#f5c542] p-4 rounded-full">
                 <Youtube className="h-12 w-12 text-[#0b1e6d]" />
               </div>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              YouTube Upload Tutorial
-            </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Complete guide to uploading and managing YouTube videos for Paul Sir's Classes
-            </p>
+        <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+  YouTube Videos
+</h1>
+<p className="text-xl text-white/80 max-w-3xl mx-auto">
+  Watch Paul Sir’s educational videos covering important concepts, tips, and complete explanations for better understanding.
+</p>
           </div>
         </div>
       </section>
- 
-      {/* Progress Steps */}
-<section className="py-12 bg-white border-b">
-  <div className="max-w-7xl mx-auto px-6">
+  <section className="py-20 ">
+      
 
-    <div className="flex items-center justify-between relative">
 
-      {steps.map((step, index) => (
-        <div
-          key={step.id}
-          className="flex-1 flex flex-col items-center relative cursor-pointer"
-          onClick={() => setActiveStep(step.id)}
-        >
-
-          {/* Line */}
-          {index !== steps.length - 1 && (
-            <div className="absolute top-6 left-1/2 w-full h-[2px] bg-gray-200 z-0"></div>
-          )}
-
-          {/* Circle */}
+      {/* Video Grid */}
+      <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {videos.map((video, index) => (
           <div
-            className={`relative z-10 flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-200
-            ${
-              activeStep === step.id
-                ? "bg-[#0b1e6d] border-[#0b1e6d] text-white shadow-md"
-                : "bg-white border-gray-300 text-gray-500 hover:border-[#0b1e6d]"
-            }`}
+            key={index}
+            className="bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
           >
-            {step.icon}
+            <div className="aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${video.id}`}
+                title="YouTube video"
+                className="w-full h-full"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </section>
+      {/* Progress Steps */}
+      {/* <section className="py-12 bg-white border-b">
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="flex items-center justify-between relative">
+
+            {steps.map((step, index) => (
+              <div
+                key={step.id}
+                className="flex-1 flex flex-col items-center relative cursor-pointer"
+                onClick={() => setActiveStep(step.id)}
+              >
+
+
+                {index !== steps.length - 1 && (
+                  <div className="absolute top-6 left-1/2 w-full h-[2px] bg-gray-200 z-0"></div>
+                )}
+
+
+                <div
+                  className={`relative z-10 flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-200
+            ${activeStep === step.id
+                      ? "bg-[#0b1e6d] border-[#0b1e6d] text-white shadow-md"
+                      : "bg-white border-gray-300 text-gray-500 hover:border-[#0b1e6d]"
+                    }`}
+                >
+                  {step.icon}
+                </div>
+
+
+                <p
+                  className={`mt-3 text-sm font-medium text-center hidden md:block
+            ${activeStep === step.id
+                      ? "text-[#0b1e6d]"
+                      : "text-gray-500"
+                    }`}
+                >
+                  {step.title}
+                </p>
+
+              </div>
+            ))}
+
           </div>
 
-          {/* Title */}
-          <p
-            className={`mt-3 text-sm font-medium text-center hidden md:block
-            ${
-              activeStep === step.id
-                ? "text-[#0b1e6d]"
-                : "text-gray-500"
-            }`}
-          >
-            {step.title}
-          </p>
-
         </div>
-      ))}
+      </section> */}
 
-    </div>
 
-  </div>
-</section>
-
-      {/* Main Content */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-8">
-            
-            {/* Main Tutorial Content */}
+
             <div className="lg:col-span-2 space-y-8">
 
-              {/* Step 1: Create YouTube Account */}
               {activeStep === 1 && (
                 <div className="bg-white rounded-2xl shadow-lg p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -234,7 +261,6 @@ export default function YouetubeTutorial() {
                 </div>
               )}
 
-              {/* Step 2: Prepare Video Content */}
               {activeStep === 2 && (
                 <div className="bg-white rounded-2xl shadow-lg p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -358,7 +384,6 @@ export default function YouetubeTutorial() {
                 </div>
               )}
 
-              {/* Step 3: Upload to YouTube */}
               {activeStep === 3 && (
                 <div className="bg-white rounded-2xl shadow-lg p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -429,7 +454,7 @@ export default function YouetubeTutorial() {
                             </div>
                             <div>
                               <p className="font-medium text-gray-700">Description Template:</p>
-                              <textarea 
+                              <textarea
                                 className="bg-gray-200 px-2 py-1 rounded text-xs w-full mt-1 h-20 resize-none"
                                 readOnly
                                 value={`📚 Course: [Course Name]
@@ -497,7 +522,6 @@ export default function YouetubeTutorial() {
                 </div>
               )}
 
-              {/* Step 4: Configure Settings */}
               {activeStep === 4 && (
                 <div className="bg-white rounded-2xl shadow-lg p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -593,7 +617,6 @@ export default function YouetubeTutorial() {
                 </div>
               )}
 
-              {/* Step 5: Integrate with Website */}
               {activeStep === 5 && (
                 <div className="bg-white rounded-2xl shadow-lg p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -632,7 +655,7 @@ export default function YouetubeTutorial() {
   allowfullscreen>
 </iframe>`}</pre>
                         </div>
-                        <button 
+                        <button
                           onClick={() => handleCopy('iframe template')}
                           className="mt-3 text-[#0b1e6d] hover:text-[#1e3a8a] text-sm font-medium flex items-center gap-2"
                         >
@@ -690,7 +713,6 @@ export default function YouetubeTutorial() {
                 </div>
               )}
 
-              {/* Step 6: Manage & Analyze */}
               {activeStep === 6 && (
                 <div className="bg-white rounded-2xl shadow-lg p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -846,20 +868,18 @@ export default function YouetubeTutorial() {
                 </div>
               )}
 
-              {/* Navigation Buttons */}
               <div className="flex justify-between items-center bg-white rounded-2xl shadow-lg p-6">
                 <button
                   onClick={() => setActiveStep(Math.max(1, activeStep - 1))}
                   disabled={activeStep === 1}
-                  className={`px-6 py-3 rounded-xl font-semibold transition flex items-center gap-2 ${
-                    activeStep === 1
+                  className={`px-6 py-3 rounded-xl font-semibold transition flex items-center gap-2 ${activeStep === 1
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }`}
+                    }`}
                 >
                   Previous Step
                 </button>
-                
+
                 <div className="text-center">
                   <p className="text-sm text-gray-500">Step {activeStep} of {steps.length}</p>
                 </div>
@@ -867,11 +887,10 @@ export default function YouetubeTutorial() {
                 <button
                   onClick={() => setActiveStep(Math.min(steps.length, activeStep + 1))}
                   disabled={activeStep === steps.length}
-                  className={`px-6 py-3 rounded-xl font-semibold transition flex items-center gap-2 ${
-                    activeStep === steps.length
+                  className={`px-6 py-3 rounded-xl font-semibold transition flex items-center gap-2 ${activeStep === steps.length
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                       : 'bg-[#0b1e6d] text-white hover:bg-[#1e3a8a]'
-                  }`}
+                    }`}
                 >
                   Next Step
                   <ArrowRight className="h-4 w-4" />
@@ -879,94 +898,90 @@ export default function YouetubeTutorial() {
               </div>
             </div>
 
-            {/* Sidebar */}
-<div className="space-y-6">
-  <div className="sticky top-20 space-y-6">
-              {/* Quick Links */}
-              <div className="bg-white rounded-2xl shadow-lg p-6 ">
-                <h3 className="text-xl font-bold text-[#0b1e6d] mb-4">Quick Links</h3>
-                <div className="space-y-3">
-                  <a 
-                    href="https://studio.youtube.com" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-gray-700 hover:text-[#0b1e6d] transition p-2 rounded-lg hover:bg-gray-50"
-                  >
-                    <Youtube className="h-5 w-5" />
-                    <span className="text-sm">YouTube Studio</span>
-                  </a>
-                  <a 
-                    href="https://youtube.com/@paulsirscommerceclasses" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-gray-700 hover:text-[#0b1e6d] transition p-2 rounded-lg hover:bg-gray-50"
-                  >
-                    <Eye className="h-5 w-5" />
-                    <span className="text-sm">View Channel</span>
-                  </a>
-                  <a 
-                    href="/courses" 
-                    className="flex items-center gap-3 text-gray-700 hover:text-[#0b1e6d] transition p-2 rounded-lg hover:bg-gray-50"
-                  >
-                    <FolderOpen className="h-5 w-5" />
-                    <span className="text-sm">Course Pages</span>
-                  </a>
+            <div className="space-y-6">
+              <div className="sticky top-20 space-y-6">
+                <div className="bg-white rounded-2xl shadow-lg p-6 ">
+                  <h3 className="text-xl font-bold text-[#0b1e6d] mb-4">Quick Links</h3>
+                  <div className="space-y-3">
+                    <a
+                      href="https://studio.youtube.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-gray-700 hover:text-[#0b1e6d] transition p-2 rounded-lg hover:bg-gray-50"
+                    >
+                      <Youtube className="h-5 w-5" />
+                      <span className="text-sm">YouTube Studio</span>
+                    </a>
+                    <a
+                      href="https://youtube.com/@paulsirscommerceclasses"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-gray-700 hover:text-[#0b1e6d] transition p-2 rounded-lg hover:bg-gray-50"
+                    >
+                      <Eye className="h-5 w-5" />
+                      <span className="text-sm">View Channel</span>
+                    </a>
+                    <a
+                      href="/courses"
+                      className="flex items-center gap-3 text-gray-700 hover:text-[#0b1e6d] transition p-2 rounded-lg hover:bg-gray-50"
+                    >
+                      <FolderOpen className="h-5 w-5" />
+                      <span className="text-sm">Course Pages</span>
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-              {/* Video Requirements */}
-              <div className="bg-white rounded-2xl shadow-lg p-6">
-                <h3 className="text-xl font-bold text-[#0b1e6d] mb-4">Video Specs</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Resolution</span>
-                    <span className="font-medium">1080p</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Aspect Ratio</span>
-                    <span className="font-medium">16:9</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Frame Rate</span>
-                    <span className="font-medium">30fps</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Format</span>
-                    <span className="font-medium">MP4</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Max Size</span>
-                    <span className="font-medium">128GB</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Duration</span>
-                    <span className="font-medium">10-45 min</span>
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                  <h3 className="text-xl font-bold text-[#0b1e6d] mb-4">Video Specs</h3>
+                  <div className="space-y-3 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Resolution</span>
+                      <span className="font-medium">1080p</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Aspect Ratio</span>
+                      <span className="font-medium">16:9</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Frame Rate</span>
+                      <span className="font-medium">30fps</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Format</span>
+                      <span className="font-medium">MP4</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Max Size</span>
+                      <span className="font-medium">128GB</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Duration</span>
+                      <span className="font-medium">10-45 min</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Contact Support */}
-              <div className="bg-gradient-to-br from-[#0b1e6d] to-[#1e3a8a] rounded-2xl p-6 text-white">
-                <h3 className="text-xl font-bold mb-4">Need Help?</h3>
-                <p className="text-white/80 text-sm mb-4">
-                  Having trouble with YouTube uploads? Contact our technical support team.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p className="flex items-center gap-2">
-                    <Phone className="h-4 w-4" />
-                    9007019442
+                <div className="bg-gradient-to-br from-[#0b1e6d] to-[#1e3a8a] rounded-2xl p-6 text-white">
+                  <h3 className="text-xl font-bold mb-4">Need Help?</h3>
+                  <p className="text-white/80 text-sm mb-4">
+                    Having trouble with YouTube uploads? Contact our technical support team.
                   </p>
-                  <p className="flex items-center gap-2">
-                    <Mail className="h-4 w-4" />
-                    paulsirsclasses@gmail.com
-                  </p>
+                  <div className="space-y-2 text-sm">
+                    <p className="flex items-center gap-2">
+                      <Phone className="h-4 w-4" />
+                      9007019442
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Mail className="h-4 w-4" />
+                      paulsirsclasses@gmail.com
+                    </p>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

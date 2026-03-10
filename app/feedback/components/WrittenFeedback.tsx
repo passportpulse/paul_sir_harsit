@@ -33,7 +33,7 @@ export default function WrittenFeedback({ feedback }: WrittenFeedbackProps) {
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#0b1e6d]">{item.name}</h3>
-                    <p className="text-sm text-gray-600">{item.course}</p>
+                    {/* <p className="text-sm text-gray-600">{item.course}</p> */}
                   </div>
                 </div>
                 <div className="text-right">

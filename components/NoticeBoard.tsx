@@ -8,57 +8,33 @@ export default function NoticeBoard() {
   const [notices, setNotices] = useState([
     {
       id: 1,
-      type: 'exam',
-      title: 'CA Foundation Mock Test - 15th March',
-      description: 'Full syllabus mock test for CA Foundation students. Register by 10th March.',
+      type: 'admission',
+      title: 'ISC & CBSE – Class 11 (Session 2026–27)',
+      description: 'New batch for Class 11 (ISC & CBSE) for the session 2026–27 will start from 1st April 2026 for both online and offline classes.',
       date: '2024-03-01',
       priority: 'high',
+      Note: 'Note: Only 20 students will be taken in each batch.',
       icon: <Calendar className="w-5 h-5" />
     },
     {
       id: 2,
-      type: 'result',
-      title: 'ISC Commerce Results - 95% Success',
-      description: 'Congratulations to our ISC Commerce students for achieving outstanding results!',
+      type:  'admission',
+      title: 'B.Com 1st Semester (Hons / Gen) – Session 2026–27',
+      description: 'New batch for B.Com 1st Semester (Hons / General) for the session 2026–27 will start from 1st April 2026 through online and offline classes.',
       date: '2024-02-28',
       priority: 'high',
+      Note: 'Note: Only 20 students will be taken in each batch.',
       icon: <Trophy className="w-5 h-5" />
     },
     {
       id: 3,
       type: 'admission',
-      title: 'New Batch Admissions Open - April 2024',
-      description: 'Admissions open for all courses. Early bird discount available till 25th March.',
+      title: 'CA / CMA / CS (Foundation & Intermediate)',
+      description: 'Classes for CA, CMA, and CS (Foundation & Intermediate) for the November 2026 examination will start from 1st May 2026 through online and offline modes.',
       date: '2024-02-25',
       priority: 'medium',
+      Note: 'Note: Only 20 students will be taken in each batch.',
       icon: <BookOpen className="w-5 h-5" />
-    },
-    {
-      id: 4,
-      type: 'schedule',
-      title: 'Weekend Special Classes - CMA Intermediate',
-      description: 'Special weekend batches starting from 5th March for working professionals.',
-      date: '2024-02-20',
-      priority: 'medium',
-      icon: <Clock className="w-5 h-5" />
-    },
-    {
-      id: 5,
-      type: 'workshop',
-      title: 'Taxation Workshop - 20th March',
-      description: 'Free workshop on GST and Income Tax for B.Com students.',
-      date: '2024-02-18',
-      priority: 'low',
-      icon: <Users className="w-5 h-5" />
-    },
-    {
-      id: 6,
-      type: 'holiday',
-      title: 'Class Schedule - Holi Festival',
-      description: 'Classes will remain closed on 25th March for Holi. Regular classes from 26th March.',
-      date: '2024-02-15',
-      priority: 'low',
-      icon: <AlertCircle className="w-5 h-5" />
     }
   ])
 
@@ -102,13 +78,13 @@ export default function NoticeBoard() {
               <div className="bg-[#f5c542] text-[#0b1e6d] p-3 rounded-full mr-3">
                 <Bell className="w-6 h-6" />
               </div>
-              <h2 className="text-4xl font-bold text-[#0b1e6d]">Notice Board</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-[#0b1e6d]">Notice Board</h2>
             </div>
             <p className="text-gray-600 text-lg mt-2">
               Stay updated with latest announcements, exam schedules, and important notifications
             </p>
           </div>
-          <div className="text-center mb-12">
+          <div className="hidden md:block text-center mb-12">
             <button className="bg-[#0b1e6d] hover:bg-[#f5c542] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg">
               View All Notices
             </button>
@@ -160,7 +136,10 @@ export default function NoticeBoard() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {notice.description}
                 </p>
-
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  All interested students are requested to enroll their names immediately.
+                </p>
+                <p className="text-red-500 text-xs  mb-4">{notice.Note}</p>
                 {/* Notice Footer */}
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <span className="text-xs text-gray-500">

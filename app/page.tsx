@@ -8,63 +8,63 @@ import NoticeBoard from '@/components/NoticeBoard'
 export default function HomePage() {
   return (
     <div className="bg-white text-gray-800">
-<section className="relative h-screen w-full flex items-center justify-center overflow-hidden text-white">
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden text-white">
 
-  {/* Background Image */}
-  <div className="absolute inset-0">
-    <img
-      src="/bg.png"
-      alt="background"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-blue-900/60"></div>
-  </div>
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/bg.png"
+            alt="background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-blue-900/60"></div>
+        </div>
 
-  {/* Animated Background Circles */}
-  <div className="absolute w-[500px] h-[500px] bg-blue-400 opacity-20 rounded-full blur-3xl animate-pulse top-[-100px] left-[-100px]" />
-  <div className="absolute w-[400px] h-[400px] bg-blue-300 opacity-20 rounded-full blur-3xl animate-bounce bottom-[-120px] right-[-120px]" />
+        {/* Animated Background Circles */}
+        <div className="absolute w-[500px] h-[500px] bg-blue-400 opacity-20 rounded-full blur-3xl animate-pulse top-[-100px] left-[-100px]" />
+        <div className="absolute w-[400px] h-[400px] bg-blue-300 opacity-20 rounded-full blur-3xl animate-bounce bottom-[-120px] right-[-120px]" />
 
-  {/* Logo and Content - Centered */}
-  <div className="relative z-10 text-center px-6 flex flex-col items-center">
-    <img
-      src="/logo.png"
-      alt="logo"
-      className="w-32 md:w-86 mb-6 animate-logo"
-    />
+        {/* Logo and Content - Centered */}
+        <div className="relative z-10 text-center px-6 flex flex-col items-center">
+          <img
+            src="/logo.png"
+            alt="logo"
+            className="w-32 md:w-86 mb-6 animate-logo"
+          />
 
-    {/* Title */}
-    <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-wide animate-title">
-      PAUL SIR'S CLASSES
-    </h1>
+          {/* Title */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-wide animate-title">
+            PAUL SIR'S CLASSES
+          </h1>
 
-    {/* Slogan */}
-    <p className="mt-6 text-xl md:text-3xl text-blue-100 animate-slogan">
-      From Basics to Brilliance in Commerce.
-    </p>
+          {/* Slogan */}
+          <p className="mt-6 text-xl md:text-3xl text-blue-100 animate-slogan">
+            From Basics to Brilliance in Commerce.
+          </p>
 
-    {/* Button */}
-    <button className="mt-10 px-8 py-4 text-lg bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-100 transition animate-slogan">
-      Join Now
-    </button>
-  </div>
+          {/* Button */}
+          <button className="mt-10 px-8 py-4 text-lg bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-100 transition animate-slogan">
+            Join Now
+          </button>
+        </div>
 
 
-</section>
+      </section>
 
       {/* ================= HERO SECTION ================= */}
       <HeroSection />
- <AboutSection />
+      <AboutSection />
       {/* ================= PREMIUM ABOUT INSTITUTE ================= */}
-      <section className="py-32 bg-gradient-to-b from-[#f9fafc] to-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
+      <section className="py-32 bg-gradient-to-b from-[#f9fafc] to-white">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-start">
 
           {/* ===== LEFT IMAGE AREA ===== */}
-          <div className="relative">
+        <div className="relative md:sticky md:top-24">
+
 
             {/* Background Accent Layer */}
             <div className="absolute -top-10 -left-10 w-[90%] h-[90%] bg-orange-100 rounded-[40px]"></div>
-            <div className="absolute -bottom-10 -right-10 w-[90%] h-[90%] border-4 border-orange-200 rounded-[40px]"></div>
-
+<div className="hidden lg:block absolute -bottom-10 -right-10 w-[90%] h-[90%] border-4 border-orange-200 rounded-[40px]"></div>
             {/* Main Image */}
             <img
               src="/paul.jpeg"
@@ -93,19 +93,18 @@ export default function HomePage() {
               With Expertise & Integrity
             </h2>
 
+           
             <p className="text-gray-600 leading-relaxed mb-6">
-              Paul Sir’s Classes stands as one of North Kolkata’s most trusted commerce coaching institutes,
-              strategically located near <span className="font-medium text-gray-800">Girish Park Metro</span>
-              and <span className="font-medium text-gray-800">Dumdum Station</span>.
-              For over two decades, the institute has consistently produced excellent academic results.
+              Paul Sir’s Classes is one of the best Commerce coaching institutes in North Kolkata, trusted by students and parents for high-quality Commerce education and excellent board results. Conveniently located near the <span className="font-medium text-gray-800">Girish Park Metro</span> and <span className="font-medium text-gray-800">Dum Dum Station</span>, the institute has been providing top Commerce coaching in Kolkata for over 20 years, helping Class 11 and Class 12 Commerce students build strong academic foundations and achieve outstanding success.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              We specialize in Accountancy coaching, Economics tuition, and Business Studies coaching, Costing & Taxation, Corporate Accounting, Financial management guidance using a concept-based teaching approach, exam-focused preparation, and regular test series designed to help students secure high marks in board examinations. Our structured syllabus coverage, clear conceptual explanations, practical problem-solving guidance, and personalized attention ensure that every student develops a deep understanding of Commerce subjects.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Recognized as a trusted Commerce tuition center in North Kolkata, Paul Sir’s Classes emphasizes small batch learning, individual mentoring, doubt-clearing sessions, and result-driven teaching methods. Located conveniently near Girish Park and Dum Dum, the institute continues to guide students toward academic excellence, confidence, and successful careers in Commerce and business. 
             </p>
 
-            <p className="text-gray-600 leading-relaxed mb-10">
-              Our approach combines structured syllabus planning, deep conceptual clarity,
-              exam-focused strategy, and personalized mentorship — ensuring every student
-              achieves confidence and academic excellence in commerce subjects.
-            </p>
-
+      
             {/* Mentor Highlight Card */}
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
 
@@ -117,15 +116,15 @@ export default function HomePage() {
                 Founder & Lead Commerce Mentor
               </p>
 
+              <p className="text-gray-600 leading-relaxed mb-3">
+                J. Paul Sir (M.Com, CMA) is a highly respected Commerce educator and mentor in North Kolkata, known for his exceptional ability to simplify complex accounting and commerce concepts. With over 25 years of dedicated teaching experience, he has successfully guided thousands of Class 11 and Class 12 Commerce students toward outstanding academic results and strong conceptual understanding. His teaching approach focuses on deep concept clarity, practical accounting knowledge, structured notes, and strategic exam preparation, enabling students to confidently master subjects like Accountancy, Economics, and Business Studies.
+              </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Renowned for concept clarity, practical accounting insight,
-                structured notes, and powerful exam strategies.
-                His mentorship style blends discipline with approachability,
-                making complex financial concepts easy to master.
+                What truly sets Paul Sir apart is his unique mentorship style that combines discipline, personal attention, and student-friendly guidance, creating a supportive learning environment where every student can thrive. Widely trusted by students and parents, Paul Sir’s Classes has become a leading Commerce coaching destination in North Kolkata, known for consistent results, strong fundamentals, and academic excellence.
               </p>
 
               {/* Stats Row */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <div className="flex items-center gap-4">
                   <div className="bg-orange-100 p-3 rounded-xl">
@@ -159,7 +158,7 @@ export default function HomePage() {
       <NoticeBoard />
 
       {/* ================= ONLINE LEARNING CENTER SECTION ================= */}
-       {/* ================= COURSES ================= */}
+      {/* ================= COURSES ================= */}
       <section id="courses" className="py-28 bg-[#f8f9fb]">
         <div className="max-w-7xl mx-auto px-6">
 
@@ -234,74 +233,74 @@ export default function HomePage() {
         </div>
       </section>
 
- {/* Gallery Section */}
+      {/* Gallery Section */}
       <section className="py-28 bg-[#f8f9fb]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center">
-          {/* Section Header */}
-          <div className="text-left mb-16">
-           <p className="text-orange-500 font-semibold uppercase tracking-wide mb-3">
-              Our Gallery
-            </p>
-           <h2 className="text-4xl lg:text-5xl font-bold text-[#0f172a]">
-              Memories & Moments
-            </h2>
-            <p className="text-gray-600 leading-relaxed max-w-3xl ">
-              Explore our journey through photos of classroom sessions, events, achievements, and student success stories.
-            </p>
+            {/* Section Header */}
+            <div className="text-left mb-16">
+              <p className="text-orange-500 font-semibold uppercase tracking-wide mb-3">
+                Our Gallery
+              </p>
+              <h2 className="text-4xl lg:text-5xl font-bold text-[#0f172a]">
+                Memories & Moments
+              </h2>
+              <p className="text-gray-600 leading-relaxed max-w-3xl ">
+                Explore our journey through photos of classroom sessions, events, achievements, and student success stories.
+              </p>
+            </div>
+            {/* View More Button */}
+        <div className="hidden md:block text-center">
+              <a
+                href="/gallery"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#0f172a] hover:bg-orange-500 text-white font-semibold rounded-xl  transition duration-300"
+              >
+                View Full Gallery
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </div>
-    {/* View More Button */}
-          <div className="text-center">
-            <a 
-              href="/gallery" 
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#0f172a] hover:bg-orange-500 text-white font-semibold rounded-xl  transition duration-300"
-            >
-              View Full Gallery
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
+
+          {/* Gallery Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+
+            <div className="relative group overflow-hidden rounded-xl  transition duration-300 bg-white">
+              <img
+                src="/gallery/33.jpeg"
+                alt="Classroom Session"
+                className="w-full h-64 object-contain group-hover:scale-110 transition duration-300"
+              />
+            </div>
+
+            <div className="relative group overflow-hidden rounded-xl  transition duration-300 bg-white">
+              <img
+                src="/gallery/32.jpeg"
+                alt="Student Achievement"
+                className="w-full h-64 object-contain group-hover:scale-110 transition duration-300"
+              />
+            </div>
+
+            <div className="relative group overflow-hidden rounded-xl transition duration-300 bg-white">
+              <img
+                src="/gallery/31.jpeg"
+                alt="Events & Activities"
+                className="w-full h-64 object-contain group-hover:scale-110 transition duration-300"
+              />
+            </div>
+
+            <div className="relative group overflow-hidden rounded-xl transition duration-300 bg-white">
+              <img
+                src="/gallery/29.jpeg"
+                alt="Campus Life"
+                className="w-full h-64 object-contain group-hover:scale-110 transition duration-300"
+              />
+            </div>
+
           </div>
-</div>
 
-        {/* Gallery Grid */}
-<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
 
-  <div className="relative group overflow-hidden rounded-xl  transition duration-300 bg-white">
-    <img 
-      src="/gallery/33.jpeg" 
-      alt="Classroom Session" 
-      className="w-full h-64 object-contain group-hover:scale-110 transition duration-300"
-    />
-  </div>
-
-  <div className="relative group overflow-hidden rounded-xl  transition duration-300 bg-white">
-    <img 
-      src="/gallery/32.jpeg"  
-      alt="Student Achievement" 
-      className="w-full h-64 object-contain group-hover:scale-110 transition duration-300"
-    />
-  </div>
-
-  <div className="relative group overflow-hidden rounded-xl transition duration-300 bg-white">
-    <img 
-      src="/gallery/31.jpeg"  
-      alt="Events & Activities" 
-      className="w-full h-64 object-contain group-hover:scale-110 transition duration-300"
-    />
-  </div>
-
-  <div className="relative group overflow-hidden rounded-xl transition duration-300 bg-white">
-    <img 
-      src="/gallery/29.jpeg" 
-      alt="Campus Life" 
-      className="w-full h-64 object-contain group-hover:scale-110 transition duration-300"
-    />
-  </div>
-
-</div>
-
-      
 
         </div>
       </section>
@@ -387,7 +386,7 @@ export default function HomePage() {
         </div>
       </section>
 
-    
+
 
       {/* ================= TESTIMONIALS ================= */}
       <section className="py-28 bg-[#f8f9fb]">
@@ -414,22 +413,22 @@ export default function HomePage() {
 
             {[
               {
-                name: "Ritika Sharma",
+                name: "Manjima Mukherjee",
                 course: "ISC Commerce Student",
                 review:
-                  "Paul Sir’s teaching style made Accounts and Economics extremely easy to understand. His structured notes and exam strategies helped me score above 90%.",
+                  "He is best teacher you can ever have... I'm studying under his guidance for a long time he is genuinely very helpful and his teaching techniques are very unique and innovative..you should must give it a try.",
               },
               {
-                name: "Arjun Mehta",
+                name: "Arin Sarkar",
                 course: "B.Com Student",
                 review:
-                  "The clarity with which Sir explains Financial Accounting and Taxation is outstanding. Doubt clearing sessions are very helpful and practical.",
+                  "This tuition was too much effective that it made accountancy interesting for me and the sir is friendly and thus teach with having Little funs which engage the students more into the studies.",
               },
               {
-                name: "Sneha Agarwal",
+                name: "NINJA GMR FF",
                 course: "CA Foundation Aspirant",
                 review:
-                  "Best commerce mentor in Kolkata. The discipline, practice sessions, and motivation provided by Sir boosted my confidence for professional exams.",
+                  "Sir is too good. His concept is very unique and usefull for us....",
               },
             ].map((item, index) => (
               <div
@@ -457,9 +456,9 @@ export default function HomePage() {
                     <div className="font-semibold text-[#0f172a]">
                       {item.name}
                     </div>
-                    <div className="text-sm text-gray-500">
+                    {/* <div className="text-sm text-gray-500">
                       {item.course}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -480,9 +479,9 @@ export default function HomePage() {
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               Join thousands of successful students who have achieved their academic goals with Paul Sir's expert guidance. Take the first step towards your success today.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <a 
+              <a
                 href="/enroll"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[#f5c542] text-[#0b1e6d] font-bold rounded-xl hover:bg-yellow-400 transition duration-300 transform hover:scale-105"
               >
@@ -491,8 +490,8 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
-              
-              <a 
+
+              <a
                 href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/30 transition duration-300 border border-white/30"
               >
@@ -510,7 +509,7 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold mb-2">Expert Faculty</h3>
                 <p className="text-white/80 text-sm">25+ years of experience in commerce education</p>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -520,7 +519,7 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold mb-2">Personalized Attention</h3>
                 <p className="text-white/80 text-sm">Small batch sizes for individual focus</p>
               </div>
-              
+
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

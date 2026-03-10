@@ -4,7 +4,7 @@ import { Phone, Play, Users, Award, Star } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[80vh] bg-[#f8f6f2] overflow-hidden">
+    <section className="relative h-[100vh] bg-[#f8f6f2] overflow-hidden">
 
       {/* GOLD ANIMATED DOTS */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -23,14 +23,14 @@ export default function HeroSection() {
           <div className="space-y-8 py-16 lg:py-0">
 
             <h1
-  className="text-5xl md:text-6xl  font-extrabold "
-  style={{
-    background: "linear-gradient(90deg,#93c5fd,#3b82f6,#1e3a8a)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    textShadow: "3px 3px 0px #1e40af, 6px 6px 12px rgba(0,0,0,0.4)"
-  }}
->
+              className="text-5xl md:text-6xl  font-extrabold "
+              style={{
+                background: "linear-gradient(90deg,#93c5fd,#3b82f6,#1e3a8a)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                textShadow: "3px 3px 0px #1e40af, 6px 6px 12px rgba(0,0,0,0.4)"
+              }}
+            >
               PAUL SIR’S CLASSES
               <div className="relative inline-block mx-2 mt-4">
                 <span className="text-yellow-500 border border-yellow-500 px-3 py-1 rounded rotate-45 relative z-10">Learning</span>
@@ -69,7 +69,7 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="relative flex items-center justify-center h-full">
+       <div className="hidden md:flex items-center justify-center h-full relative">
 
             {/* IMAGE - Larger and more prominent */}
             <div className="relative z-10">
