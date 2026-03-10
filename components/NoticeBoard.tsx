@@ -3,40 +3,32 @@
 import { useState, useEffect } from 'react'
 import { Bell, Calendar, Trophy, AlertCircle, BookOpen, Users, Clock, ChevronRight } from 'lucide-react'
 
+interface Notice {
+  _id?: string
+  id: number
+  type: 'exam' | 'result' | 'admission' | 'schedule' | 'workshop' | 'holiday'
+  title: string
+  description: string
+  date: string
+  priority: 'high' | 'medium' | 'low'
+  Note?: string
+  createdAt?: string
+  updatedAt?: string
+}
+
+const iconMap = {
+  exam: <Calendar className="w-5 h-5" />,
+  result: <Trophy className="w-5 h-5" />,
+  admission: <BookOpen className="w-5 h-5" />,
+  schedule: <Clock className="w-5 h-5" />,
+  workshop: <Users className="w-5 h-5" />,
+  holiday: <AlertCircle className="w-5 h-5" />
+}
+
 export default function NoticeBoard() {
+  const [notices, setNotices] = useState<Notice[]>([])
   const [activeTab, setActiveTab] = useState('all')
-  const [notices, setNotices] = useState([
-    {
-      id: 1,
-      type: 'admission',
-      title: 'ISC & CBSE – Class 11 (Session 2026–27)',
-      description: 'New batch for Class 11 (ISC & CBSE) for the session 2026–27 will start from 1st April 2026 for both online and offline classes.',
-      date: '2024-03-01',
-      priority: 'high',
-      Note: 'Note: Only 20 students will be taken in each batch.',
-      icon: <Calendar className="w-5 h-5" />
-    },
-    {
-      id: 2,
-      type:  'admission',
-      title: 'B.Com 1st Semester (Hons / Gen) – Session 2026–27',
-      description: 'New batch for B.Com 1st Semester (Hons / General) for the session 2026–27 will start from 1st April 2026 through online and offline classes.',
-      date: '2024-02-28',
-      priority: 'high',
-      Note: 'Note: Only 20 students will be taken in each batch.',
-      icon: <Trophy className="w-5 h-5" />
-    },
-    {
-      id: 3,
-      type: 'admission',
-      title: 'CA / CMA / CS (Foundation & Intermediate)',
-      description: 'Classes for CA, CMA, and CS (Foundation & Intermediate) for the November 2026 examination will start from 1st May 2026 through online and offline modes.',
-      date: '2024-02-25',
-      priority: 'medium',
-      Note: 'Note: Only 20 students will be taken in each batch.',
-      icon: <BookOpen className="w-5 h-5" />
-    }
-  ])
+  const [isLoading, setIsLoading] = useState(true)
 
   const tabs = [
     { id: 'all', label: 'All Notices', icon: <Bell className="w-4 h-4" /> },
@@ -45,6 +37,26 @@ export default function NoticeBoard() {
     { id: 'admission', label: 'Admissions', icon: <BookOpen className="w-4 h-4" /> },
     { id: 'schedule', label: 'Schedule', icon: <Clock className="w-4 h-4" /> }
   ]
+
+  useEffect(() => {
+    fetchNotices()
+  }, [])
+
+  const fetchNotices = async () => {
+    try {
+      const response = await fetch('/api/notices')
+      const data = await response.json()
+      if (data.success) {
+        setNotices(data.data)
+      } else {
+        console.error('Failed to fetch notices:', data.error)
+      }
+    } catch (error) {
+      console.error('Error fetching notices:', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   const filteredNotices = activeTab === 'all'
     ? notices
@@ -66,6 +78,27 @@ export default function NoticeBoard() {
       month: 'short',
       year: 'numeric'
     })
+  }
+
+  if (isLoading) {
+    return (
+      <section className="py-20 bg-gradient-to-b from-white to-[#f8f9fb]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center">
+            <div className="flex justify-center mb-6">
+              <div className="bg-[#f5c542] text-[#0b1e6d] p-3 rounded-full mr-3">
+                <Bell className="w-6 h-6" />
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-[#0b1e6d]">Notice Board</h2>
+            </div>
+            <p className="text-gray-600 text-lg mt-2">
+              Stay updated with latest announcements, exam schedules, and important notifications
+            </p>
+          </div>
+          <div className="text-center text-gray-500">Loading notices...</div>
+        </div>
+      </section>
+    )
   }
 
   return (
@@ -119,7 +152,7 @@ export default function NoticeBoard() {
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
                     <div className="bg-[#f5c542]/10 text-[#0b1e6d] p-2 rounded-lg">
-                      {notice.icon}
+                      {iconMap[notice.type]}
                     </div>
                     <div>
                       <span className={`inline-block px-2 py-1 text-xs font-medium rounded-full border ${getPriorityColor(notice.priority)}`}>

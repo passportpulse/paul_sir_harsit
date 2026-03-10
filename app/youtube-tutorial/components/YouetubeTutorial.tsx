@@ -70,15 +70,15 @@ export default function YouetubeTutorial() {
       description: "Track performance and manage content"
     }
   ]
-const videos = [
-  { id: "C8O84gHnucA" },
-  { id: "rYjHH71s3Os" },
-  { id: "ZE8X5hKqhes" },
-  { id: "-pLBSZmu1gM" },
-  { id: "bB3lZoShOhc" },
-  { id: "zIQeKoeCysY" },
-  { id: "P02-ffBM9VI" }
-];
+  const videos = [
+    { id: "C8O84gHnucA" },
+    { id: "rYjHH71s3Os" },
+    { id: "ZE8X5hKqhes" },
+    { id: "-pLBSZmu1gM" },
+    { id: "bB3lZoShOhc" },
+    { id: "zIQeKoeCysY" },
+    { id: "P02-ffBM9VI" }
+  ];
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -99,39 +99,39 @@ const videos = [
                 <Youtube className="h-12 w-12 text-[#0b1e6d]" />
               </div>
             </div>
-        <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-  YouTube Videos
-</h1>
-<p className="text-xl text-white/80 max-w-3xl mx-auto">
-  Watch Paul Sir’s educational videos covering important concepts, tips, and complete explanations for better understanding.
-</p>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              YouTube Videos
+            </h1>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Watch Paul Sir’s educational videos covering important concepts, tips, and complete explanations for better understanding.
+            </p>
           </div>
         </div>
       </section>
-  <section className="py-20 ">
-      
+      <section className="py-20 ">
 
 
-      {/* Video Grid */}
-      <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {videos.map((video, index) => (
-          <div
-            key={index}
-            className="bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
-          >
-            <div className="aspect-video">
-              <iframe
-                src={`https://www.youtube.com/embed/${video.id}`}
-                title="YouTube video"
-                className="w-full h-full"
-                allowFullScreen
-              ></iframe>
+
+        {/* Video Grid */}
+        <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {videos.map((video, index) => (
+            <div
+              key={index}
+              className="bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <div className="aspect-video">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}`}
+                  title="YouTube video"
+                  className="w-full h-full"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-    </section>
+      </section>
       {/* Progress Steps */}
       {/* <section className="py-12 bg-white border-b">
         <div className="max-w-7xl mx-auto px-6">
