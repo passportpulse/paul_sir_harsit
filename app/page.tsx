@@ -1,9 +1,37 @@
-'use client'
 
+import type { Metadata } from "next";
 import { Phone, Mail, MapPin, BookOpen, GraduationCap, Star, Award } from 'lucide-react'
 import AboutSection from '@/components/AboutSection'
 import HeroSection from '@/components/HeroSection'
 import NoticeBoard from '@/components/NoticeBoard'
+
+export const metadata: Metadata = {
+  title: "Commerce tuition near Dum Dum - Best commerce coaching near Girish Park | Commerce classes near Dumdum | Accountancy tuition near Dumdum | Economics coaching near Girish Park | Business Studies tuition North Kolkata | Class 11 commerce coaching Kolkata | Best commerce coaching near Dumdum | Top accountancy teacher in North Kolkata | Affordable commerce coaching near Girish Park | Experienced commerce tutor near Dumdum | ICSE commerce coaching classes near Dumdum metro | ISC accountancy and economics tuition in North Kolkata | Class 12 accountancy tuition near Girish Park Kolkata | Commerce tuition in North Kolkata | Accountancy coaching Kolkata | Business Studies tuition North Kolkata | Economics tuition Kolkata | Class 11 commerce coaching Dumdum | Commerce coaching Dumdum | Accountancy coaching Dumdum | Economics coaching Dumdum | Business Studies Dumdum | Accounts coaching Dumdum | Cost accounting Dumdum | Financial Management Dumdum | Taxation coaching Dumdum | Corporate accounting Dumdum | Business law Dumdum | Auditing Dumdum | Financial accounting Dumdum | Management accounting Dumdum | Economics Dumdum | Business studies Dumdum | Commerce classes Dumdum | B.Com coaching Dumdum | BBA coaching Dumdum | MBA coaching Dumdum | CA coaching Dumdum | CMA coaching Dumdum | CS coaching Dumdum | CA Foundation Dumdum | CA Intermediate Dumdum | CMA Foundation Dumdum | CMA Intermediate Dumdum | CS Foundation Dumdum | CS Intermediate Dumdum",
+  description: "Premier commerce coaching institute offering ICSE, ISC, CBSE, B.Com, BBA, MBA, CA, CMA, and CS courses with 25 years of excellence in education. Located near Girish Park and Dumdum metro in North Kolkata, providing specialized tuition for Class 11, Class 12 commerce, accountancy, economics, and business studies with experienced faculty and proven results. We are the best commerce coaching near Dumdum metro offering affordable tuition with top accountancy teachers in North Kolkata.",
+  keywords: "commerce tuition near Dum Dum, commerce classes near Dumdum, accountancy tuition near Dumdum, economics coaching near Girish Park, business studies tuition North Kolkata, class 11 commerce coaching Kolkata, best commerce coaching near Dumdum, top accountancy teacher in North Kolkata, affordable commerce coaching near Girish Park, experienced commerce tutor near Dumdum, ICSE commerce coaching classes near Dumdum metro, ISC accountancy and economics tuition in North Kolkata, class 12 accountancy tuition near Girish Park Kolkata, commerce tuition in North Kolkata, accountancy coaching Kolkata, business studies tuition North Kolkata, economics tuition Kolkata, class 11 commerce coaching Dumdum, commerce coaching Dumdum, accountancy coaching Dumdum, economics coaching Dumdum, business studies Dumdum, accounts coaching Dumdum, cost accounting Dumdum, financial management Dumdum, taxation coaching Dumdum, corporate accounting Dumdum, business law Dumdum, auditing Dumdum, financial accounting Dumdum, management accounting Dumdum, economics Dumdum, business studies Dumdum, commerce classes Dumdum, B.Com coaching Dumdum, BBA coaching Dumdum, MBA coaching Dumdum, CA coaching Dumdum, CMA coaching Dumdum, CS coaching Dumdum, CA Foundation Dumdum, CA Intermediate Dumdum, CMA Foundation Dumdum, CMA Intermediate Dumdum, CS Foundation Dumdum, CS Intermediate Dumdum",
+   authors: [{ name: "Paul Sir's Classes" }],
+  openGraph: {
+    title: "YouTube Upload Tutorial - Paul Sir's Classes",
+    description: "Complete guide to uploading and managing YouTube videos for Paul Sir's Classes commerce education platform.",
+    type: "website",
+    url: "https://paulsirsclasses.com/youtube-tutorial",
+    images: ["/youtube-tutorial-hero.png"]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YouTube Upload Tutorial - Paul Sir's Classes",
+    description: "Step-by-step guide for YouTube video management and optimization",
+    images: ["/youtube-tutorial-hero.png"]
+  },
+  alternates: {
+    canonical: "https://paulsirsclasses.com/youtube-tutorial"
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
+}
+
 
 export default function HomePage() {
   return (
