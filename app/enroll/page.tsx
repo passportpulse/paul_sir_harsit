@@ -40,23 +40,39 @@ function EnrollPageContent() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    alert('Enrollment form submitted successfully! We will contact you within 24 hours.')
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      whatsapp: '',
-      course: '',
-      currentLevel: '',
-      preferredMode: '',
-      address: '',
-      message: ''
-    })
-    setIsSubmitting(false)
+    try {
+      const response = await fetch('/api/enroll', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        alert('Enrollment form submitted successfully! We will contact you within 24 hours.')
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          whatsapp: '',
+          course: courseFromUrl ? decodeURIComponent(courseFromUrl) : '',
+          currentLevel: '',
+          preferredMode: '',
+          address: '',
+          message: ''
+        })
+      } else {
+        alert(data.error || 'Failed to submit enrollment form. Please try again.')
+      }
+    } catch (error) {
+      alert('An error occurred. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

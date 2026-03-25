@@ -58,7 +58,7 @@ interface EnrollFormProps {
 export default function EnrollForm({ initialCourse, courses, formData, isSubmitting, handleChange, handleSubmit }: EnrollFormProps) {
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8 border">
+    <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
       <h2 className="text-3xl font-bold text-[#0b1e6d] mb-8">
         Enrollment Form
       </h2>

@@ -12,13 +12,10 @@ import {
   AlertCircle,
   Plus,
   Edit2,
-  Trash2,
-  LogOut,
-  Home,
-  Settings,
-  UserPlus
+  Trash2
 } from 'lucide-react'
 import { Notice } from '@/lib/models/Notice'
+import AdminLayout from '@/components/AdminLayout'
 
 const iconMap = {
   exam: <Calendar className="w-5 h-5" />,
@@ -147,50 +144,9 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="bg-[#f5c542] p-2 rounded-lg">
-                <Bell className="h-6 w-6 text-[#0b1e6d]" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Notice Board Admin</h1>
-                <p className="text-sm text-gray-600">Paul Sir's Classes</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => router.push('/admin/users')}
-                className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-blue-600 transition"
-              >
-                <UserPlus className="h-4 w-4" />
-                Users
-              </button>
-              <button
-                onClick={() => router.push('/')}
-                className="p-2 text-gray-600 hover:text-[#0b1e6d] transition"
-              >
-                <Home className="h-5 w-5" />
-              </button>
-              <button
-                onClick={handleLogout}
-                className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-red-600 transition"
-              >
-                <LogOut className="h-4 w-4" />
-                Logout
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-8">
-        {/* Actions Bar */}
+    <AdminLayout title="Notice Board" subtitle="Manage notice board content">
+      {/* Actions Bar */}
+      <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-xl font-semibold text-gray-900">All Notices</h2>
@@ -216,6 +172,7 @@ export default function AdminDashboard() {
             Add Notice
           </button>
         </div>
+      </div>
 
         {/* Notices Grid */}
         <div className="grid gap-6">
@@ -267,7 +224,6 @@ export default function AdminDashboard() {
             </div>
           ))}
         </div>
-      </main>
 
       {/* Modal */}
       {isModalOpen && (
@@ -387,6 +343,6 @@ export default function AdminDashboard() {
           </div>
         </div>
       )}
-    </div>
+    </AdminLayout>
   )
 }

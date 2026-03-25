@@ -30,7 +30,7 @@ export default function EnrollSidebar() {
       </div>
 
       {/* Quick Contact */}
-      <div className="bg-gray-50 rounded-2xl p-8 border">
+      <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
         <h3 className="text-xl font-bold text-[#0b1e6d] mb-6">Need Help?</h3>
         
         <div className="space-y-4">
@@ -61,7 +61,7 @@ export default function EnrollSidebar() {
       </div>
 
       {/* Popular Courses */}
-      <div className="bg-white rounded-2xl p-8 border shadow-lg">
+      <div className="bg-white rounded-2xl p-8 border shadow-lg  border-gray-200">
         <h3 className="text-xl font-bold text-[#0b1e6d] mb-6">Popular Courses</h3>
         
         <div className="space-y-3">
